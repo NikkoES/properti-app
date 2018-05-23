@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Property Analysis</string>
+    <string name="tag_line">Analyse Property In Easiest Way</string>
+    <string name="action_settings">Settings</string>
+
+    <!--navigation menu-->
+    <string name="nav_home">Home</string>
+    <string name="nav_cicilan">Installment Calculator</string>
+    <string name="nav_nilai_pasar">Market Value Calculator</string>
+    <string name="nav_cash_flow">Cash Flow Calculator</string>
+    <string name="nav_akun">Account</string>
+    <string name="nav_bantuan">Help</string>
+    <string name="nav_pengaturan">Language Setting</string>
+    <string name="nav_give_five_star">Give Us Five Stars</string>
+    <string name="nav_keluar">Logout</string>
+
+    <!--login register-->
+    <string name="login">Login</string>
+    <string name="lupa_password">Forget Password ?</string>
+    <string name="belum_punya_akun">Don\'t have account ? Please register here</string>
+    <string name="reg_nama">Name</string>
+    <string name="reg_email">Email</string>
+    <string name="reg_no_hp">Phone Number</string>
+    <string name="reg_password">Password</string>
+    <string name="register">Register</string>
+    <string name="sudah_punya_akun">Have been registered ? Please login here</string>
+    <string name="login_berhasil">Login Success</string>
+    <string name="register_berhasil">Registered Success</string>
+    <string name="yakin_ingin_keluar">Are you sure you want to quit ?</string>
+    <string name="ya">Yes</string>
+    <string name="tidak">No</string>
+
+    <string name="inggris">English</string>
+    <string name="indonesia">Indonesian</string>
+
+    <!--general button-->
+    <string name="tambah">Add</string>
+    <string name="batal">Cancel</string>
+    <string name="hitung">Calculate</string>
+    <string name="selesai">Finish</string>
+    <string name="next">Continue</string>
+    <string name="back">Back</string>
+    <string name="review">Review</string>
+    <string name="reset">Reset</string>
+    <string name="revisi">Revision</string>
+
+    <!--dialog-->
+    <string name="berhasil_disimpan">Data has been saved</string>
+    <string name="gagal_disimpan">Data cannot be saved !</string>
+    <string name="berhasil_diubah">Data has been changed</string>
+    <string name="gagal_diubah">Data cannot be changed !</string>
+    <string name="berhasil_dihapus">Data is deleted successfully</string>
+    <string name="gagal_dihapus">Data cannot be deleted !</string>
+    <string name="data_kosong">Data hasn\'t been fulfilled !</string>
+    <string name="gagal_login_not_match">Login Failed (Email and Password do not match) !</string>
+    <string name="gagal_register">Register failed !</string>
+    <string name="gagal_koneksi">Connection failed !</string>
+    <string name="koneksi_internet_bermasalah">Internet connection trouble !</string>
+
+    <string name="data_properti_incaran_belum_lengkap">Desirable Property\'s Data hasn\'t been complete !</string>
+    <string name="properti_satu_wajib_diisi">Property #1 should be fulfilled !</string>
+    <string name="catatan_belum_diisi">Note hasn\'t been filled !</string>
+    <string name="data_belum_dihitung">Data hasn\'t been calculated !</string>
+
+    <string name="final_result">Final Result</string>
+
+    <!--menu cicilan-->
+    <string name="judul_tambah_cicilan">New Installment</string>
+    <string name="sub_judul_tambah_cicilan">Input installment\'s information :</string>
+    <string name="pinjaman_kpr">Mortgage Loan</string>
+    <string name="bunga_per_tahun">Interest Per Year (%)</string>
+    <string name="tenor_lama_pinjaman">Term Of Loan (Months)</string>
+    <string name="tenor_bunga_fix">Term Of Fixed Interest (Months)</string>
+    <string name="bunga_floating">Floating Interest Per Year (%)</string>
+    <string name="sisa_pokok_pinjaman">Remaining Principal Balance</string>
+    <string name="cicilan">Installment</string>
+    <string name="cicilan_floating">Floating Installment</string>
+    <string name="data_belum_lengkap">Data hasn\'t been filled !</string>
+
+    <!--menu nilai pasar-->
+    <string name="judul_nilai_pasar">New Market Value</string>
+    <string name="sub_judul_nilai_pasar">Input The Market Value Information :</string>
+    <string name="judul_review_nilai_pasar">Market Value Review</string>
+    <string name="judul_hasil_nilai_pasar">Market Value Result</string>
+    <string name="incaran">Incaran</string>
+    <string name="properti">Property</string>
+    <string name="properti_incaran">Desireable Property</string>
+    <string name="properti_satu">Property #1</string>
+    <string name="properti_dua">Property #2</string>
+    <string name="properti_tiga">Property #3</string>
+    <string name="properti_empat">Property #4</string>
+    <string name="properti_lima">Property #5</string>
+    <string name="harga_jual_properti">Property\'s Selling Price</string>
+    <string name="luas_tanah">Land\'s Square Measure</string>
+    <string name="luas_bangunan">Building Square Measure</string>
+    <string name="usia_bangunan">Building\'s Age</string>
+    <string name="usia_bangunan_tahun">Building\'s Age (Year)</string>
+    <string name="harga_rata_bangunan">Per Meter  Average Price of Building </string>
+    <string name="harga_rata">Building\'s Average Price</string>
+    <string name="catatan_kondisi">Building\'s Condition Check Report</string>
+    <string name="catatan_survey">Location\'s Survey Report</string>
+    <string name="harga_pasaran_per_meter">Per Meter Market Price</string>
+    <string name="perbandingan_properti_incaran">Desirable Property Comparison</string>
+
+    <!--menu cash flow-->
+    <string name="judul_cash_flow">New Cash Flow</string>
+    <string name="sub_judul_cash_flow">Input Cash Flow Information :</string>
+    <string name="judul_hasil_cash_flow">Cash Flow Result</string>
+    <string name="kamar">Room</string>
+    <string name="pemasukan">Income</string>
+    <string name="pengeluaran">Spending</string>
+    <string  name="upgrade_fasilitas">Facility Upgrade</string>
+    <string name="tipe_kamar">Room Type</string>
+    <string name="jumlah_kamar">Room\'s Amount</string>
+    <string name="harga_kamar">Room Price</string>
+    <string name="occupancy_rate">Occupancy Rate</string>
+    <string name="occupancy_rate_belum_diisi">Occupancy Rate hasn\'t been filled !</string>
+    <string name="tambah_kamar">Add Room</string>
+    <string name="total_penghasilan">Income Total</string>
+    <string name="keterangan_pemasukan">Income\'s Information</string>
+    <string name="jumlah_pemasukan">Income\'s Amount</string>
+    <string name="tambah_pemasukan">Add Income</string>
+    <string name="penghasilan_sewa_kamar">Room Rent Income</string>
+    <string name="total_pemasukan">Income Total </string>
+    <string name="keterangan_pengeluaran">Spending\'s Information</string>
+    <string name="jumlah_pengeluaran">Spending\'s Amount</string>
+    <string name="tambah_pengeluaran">Add Spend</string>
+    <string name="total_pengeluaran">Spending Total</string>
+    <string name="nama_fasilitas">Facility\'s Name</string>
+    <string name="kenaikan_harga">Price\'s Increasing</string>
+    <string name="tambah_fasilitas">Add Facility</string>
+    <string name="net_operating_income">Net Operating Income</string>
+    <string name="total_upgrade">Total Upgrade</string>
+    <string name="net_operating_income_future">Net Operating Income Future</string>
+
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="ad_id_banner_tes">ca-app-pub-3940256099942544/6300978111</string>
+
+    <string name="ad_id_banner_top">ca-app-pub-3950402057146083/6676024221</string>
+    <string name="ad_id_banner_down">ca-app-pub-3950402057146083/1031555153</string>
+    <string name="ad_id_interstitial">ca-app-pub-3950402057146083/1437559897</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

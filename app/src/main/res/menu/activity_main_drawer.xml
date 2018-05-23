@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group
+        android:id="@+id/group_feature"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/nav_home" />
+        <item
+            android:id="@+id/nav_cicilan"
+            android:icon="@drawable/ic_cicilan"
+            android:title="@string/nav_cicilan" />
+        <item
+            android:id="@+id/nav_nilai_pasar"
+            android:icon="@drawable/ic_nilai_pasar"
+            android:title="@string/nav_nilai_pasar" />
+        <item
+            android:id="@+id/nav_cash_flow"
+            android:icon="@drawable/ic_cash_flow"
+            android:title="@string/nav_cash_flow" />
+    </group>
+
+    <group
+        android:id="@+id/group_setting"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/ic_setting"
+            android:title="@string/nav_pengaturan" />
+    </group>
+
+    <group
+        android:id="@+id/group_other"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_bantuan"
+            android:title="@string/nav_bantuan" />
+        <item
+            android:id="@+id/nav_beri_5_bintang"
+            android:title="@string/nav_give_five_star" />
+        <item
+            android:id="@+id/nav_keluar"
+            android:title="@string/nav_keluar" />
+    </group>
+
+</menu>

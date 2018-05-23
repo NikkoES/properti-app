@@ -1,0 +1,148 @@
+<resources>
+    <string name="app_name">Analisa Properti</string>
+    <string name="tag_line">Mudahnya menganalisa properti</string>
+    <string name="action_settings">Settings</string>
+
+    <!--navigation menu-->
+    <string name="nav_home">Beranda</string>
+    <string name="nav_cicilan">Kalkulator Cicilan</string>
+    <string name="nav_nilai_pasar">Kalkulator Nilai Pasar</string>
+    <string name="nav_cash_flow">Kalkulator Cash Flow</string>
+    <string name="nav_akun">Akun</string>
+    <string name="nav_bantuan">Bantuan</string>
+    <string name="nav_pengaturan">Pengaturan Bahasa</string>
+    <string name="nav_give_five_star">Beri Kami 5 Bintang</string>
+    <string name="nav_keluar">Keluar</string>
+
+    <!--login register-->
+    <string name="login">Masuk</string>
+    <string name="lupa_password">Lupa Password ?</string>
+    <string name="belum_punya_akun">Belum punya akun ? Daftar di sini</string>
+    <string name="reg_nama">Nama</string>
+    <string name="reg_email">Email</string>
+    <string name="reg_no_hp">Nomor HP</string>
+    <string name="reg_password">Password</string>
+    <string name="register">Daftar</string>
+    <string name="sudah_punya_akun">Sudah punya akun ? Masuk di sini</string>
+    <string name="login_berhasil">Berhasil Masuk</string>
+    <string name="register_berhasil">Berhasil Daftar</string>
+    <string name="yakin_ingin_keluar">Apakah anda yakin ingin keluar ?</string>
+    <string name="ya">Ya</string>
+    <string name="tidak">Tidak</string>
+
+    <string name="inggris">Inggris</string>
+    <string name="indonesia">Indonesia</string>
+
+    <!--general button-->
+    <string name="tambah">Tambah</string>
+    <string name="batal">Batal</string>
+    <string name="hitung">Hitung</string>
+    <string name="selesai">Selesai</string>
+    <string name="next">Lanjut</string>
+    <string name="back">Kembali</string>
+    <string name="review">Review</string>
+    <string name="reset">Reset</string>
+    <string name="revisi">Revisi</string>
+
+    <!--dialog-->
+    <string name="berhasil_disimpan">Data berhasil disimpan</string>
+    <string name="gagal_disimpan">Data gagal disimpan !</string>
+    <string name="berhasil_diubah">Data berhasil diubah</string>
+    <string name="gagal_diubah">Data gagal diubah !</string>
+    <string name="berhasil_dihapus">Data berhasil dihapus</string>
+    <string name="gagal_dihapus">Data gagal dihapus !</string>
+    <string name="data_kosong">Data belum diisi !</string>
+    <string name="gagal_login_not_match">Login Gagal (Email dan Password tidak cocok) !</string>
+    <string name="gagal_register">Gagal daftar !</string>
+    <string name="gagal_koneksi">Gagal koneksi !</string>
+    <string name="koneksi_internet_bermasalah">Koneksi internet bermasalah !</string>
+
+    <string name="data_properti_incaran_belum_lengkap">Data properti incaran belum lengkap !</string>
+    <string name="properti_satu_wajib_diisi">Properti #1 wajin diisi !</string>
+    <string name="catatan_belum_diisi">Catatan belum diisi !</string>
+    <string name="data_belum_dihitung">Data belum dihitung !</string>
+
+    <string name="final_result">Hasil Akhir</string>
+
+    <!--menu cicilan-->
+    <string name="judul_tambah_cicilan">Cicilan Baru</string>
+    <string name="sub_judul_tambah_cicilan">Masukkan keterangan cicilan :</string>
+    <string name="pinjaman_kpr">Pinjaman KPR</string>
+    <string name="bunga_per_tahun">Bunga Per Tahun (%)</string>
+    <string name="tenor_lama_pinjaman">Tenor Lama Pinjaman (Bulan)</string>
+    <string name="tenor_bunga_fix">Tenor Bunga Fix (Bulan)</string>
+    <string name="bunga_floating">Bunga Floating Per Tahun (%)</string>
+    <string name="sisa_pokok_pinjaman">Sisa Pokok Pinjaman</string>
+    <string name="cicilan">Cicilan</string>
+    <string name="cicilan_floating">Cicilan Floating</string>
+    <string name="data_belum_lengkap">Data belum Lengkap !</string>
+
+    <!--menu nilai pasar-->
+    <string name="judul_nilai_pasar">Nilai Pasar Baru</string>
+    <string name="sub_judul_nilai_pasar">Masukkan keterangan nilai pasar :</string>
+    <string name="judul_review_nilai_pasar">Review Nilai Pasar</string>
+    <string name="judul_hasil_nilai_pasar">Hasil Nilai Pasar</string>
+    <string name="incaran">Incaran</string>
+    <string name="properti">Properti</string>
+    <string name="properti_incaran">Properti Incaran</string>
+    <string name="properti_satu">Properti #1</string>
+    <string name="properti_dua">Properti #2</string>
+    <string name="properti_tiga">Properti #3</string>
+    <string name="properti_empat">Properti #4</string>
+    <string name="properti_lima">Properti #5</string>
+    <string name="harga_jual_properti">Harga Jual Properti</string>
+    <string name="luas_tanah">Luas Tanah</string>
+    <string name="luas_bangunan">Luas Bangunan</string>
+    <string name="usia_bangunan">Usia Bangunan</string>
+    <string name="usia_bangunan_tahun">Usia Bangunan (Tahun)</string>
+    <string name="harga_rata_bangunan">Harga Rata-rata Bangunan per Meter</string>
+    <string name="harga_rata">Harga Rata Bangunan</string>
+    <string name="catatan_kondisi">Catatan Kondisi Bangunan</string>
+    <string name="catatan_survey">Catatan Survey Lokasi</string>
+    <string name="harga_pasaran_per_meter">Harga Pasaran per Meter</string>
+    <string name="perbandingan_properti_incaran">Perbandingan Properti Incaran</string>
+
+    <!--menu cash flow-->
+    <string name="judul_cash_flow">Cash Flow Baru</string>
+    <string name="sub_judul_cash_flow">Masukkan keterangan cash flow :</string>
+    <string name="judul_hasil_cash_flow">Hasil Cash Flow</string>
+    <string name="kamar">Kamar</string>
+    <string name="pemasukan">Pemasukan</string>
+    <string name="pengeluaran">Pengeluaran</string>
+    <string name="upgrade_fasilitas">Upgrade Fasilitas</string>
+    <string name="tipe_kamar">Tipe Kamar</string>
+    <string name="jumlah_kamar">Jumlah Kamar</string>
+    <string name="harga_kamar">Harga Kamar</string>
+    <string name="occupancy_rate">Occupancy Rate</string>
+    <string name="occupancy_rate_belum_diisi">Occupancy Rate belum diisi !</string>
+    <string name="tambah_kamar">Tambah Kamar</string>
+    <string name="total_penghasilan">Total Penghasilan</string>
+    <string name="keterangan_pemasukan">Keterangan Pemasukan</string>
+    <string name="jumlah_pemasukan">Jumlah Pemasukan</string>
+    <string name="tambah_pemasukan">Tambah Pemasukan</string>
+    <string name="penghasilan_sewa_kamar">Penghasilan Sewa Kamar</string>
+    <string name="total_pemasukan">Total Pemasukan</string>
+    <string name="keterangan_pengeluaran">Keterangan Pengeluaran</string>
+    <string name="jumlah_pengeluaran">Jumlah Pengeluaran</string>
+    <string name="tambah_pengeluaran">Tambah Pengeluaran</string>
+    <string name="total_pengeluaran">Total Pengeluaran</string>
+    <string name="nama_fasilitas">Nama Fasilitas</string>
+    <string name="kenaikan_harga">Kenaikan Harga</string>
+    <string name="tambah_fasilitas">Tambah Fasilitas</string>
+    <string name="net_operating_income">Net Operating Income</string>
+    <string name="total_upgrade">Total Upgrade</string>
+    <string name="net_operating_income_future">Net Operating Income Future</string>
+
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="ad_id_banner_tes">ca-app-pub-3940256099942544/6300978111</string>
+
+    <string name="ad_id_banner_top">ca-app-pub-3950402057146083/6676024221</string>
+    <string name="ad_id_banner_down">ca-app-pub-3950402057146083/1031555153</string>
+    <string name="ad_id_interstitial">ca-app-pub-3950402057146083/1437559897</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
