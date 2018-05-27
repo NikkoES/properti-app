@@ -1,6 +1,8 @@
 package com.analisaproperti.analisaproperti.adapter.cashflow;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -13,6 +15,7 @@ import android.widget.Toast;
 
 import com.analisaproperti.analisaproperti.R;
 import com.analisaproperti.analisaproperti.activity.cashflow.CashFlowNewActivity;
+import com.analisaproperti.analisaproperti.activity.cashflow.DetailCashFlowActivity;
 import com.analisaproperti.analisaproperti.api.BaseApiService;
 import com.analisaproperti.analisaproperti.api.UtilsApi;
 import com.analisaproperti.analisaproperti.model.cashflow.CashFlow;
@@ -112,15 +115,39 @@ public class CashFlowAdapter extends RecyclerView.Adapter<CashFlowAdapter.ViewHo
                 getDataFasilitas(idCashFlow);
                 getDataExtras(idCashFlow);
 
-                Intent i = new Intent(context, CashFlowNewActivity.class);
-                i.putExtra("position", position);
-                i.putExtra("dataCashFlow", dataCashFlow.toString());
-                i.putExtra("dataKamar", dataKamar.toString());
-                i.putExtra("dataPemasukan", dataPemasukan.toString());
-                i.putExtra("dataPengeluaran", dataPengeluaran.toString());
-                i.putExtra("dataFasilitas", dataFasilitas.toString());
-                i.putExtra("dataExtras", dataExtras.toString());
-                context.startActivity(i);
+                final CharSequence[] dialogitem = {"Detail Data", "Edit Data"};
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setItems(dialogitem, new DialogInterface.OnClickListener(){
+                    public void onClick(DialogInterface dialog, int item){
+                        switch(item){
+                            case 0 : {
+                                Intent i = new Intent(context, DetailCashFlowActivity.class);
+                                i.putExtra("position", position);
+                                i.putExtra("dataCashFlow", dataCashFlow.toString());
+                                i.putExtra("dataKamar", dataKamar.toString());
+                                i.putExtra("dataPemasukan", dataPemasukan.toString());
+                                i.putExtra("dataPengeluaran", dataPengeluaran.toString());
+                                i.putExtra("dataFasilitas", dataFasilitas.toString());
+                                i.putExtra("dataExtras", dataExtras.toString());
+                                context.startActivity(i);
+                                break;
+                            }
+                            case 1 : {
+                                Intent i = new Intent(context, CashFlowNewActivity.class);
+                                i.putExtra("position", position);
+                                i.putExtra("dataCashFlow", dataCashFlow.toString());
+                                i.putExtra("dataKamar", dataKamar.toString());
+                                i.putExtra("dataPemasukan", dataPemasukan.toString());
+                                i.putExtra("dataPengeluaran", dataPengeluaran.toString());
+                                i.putExtra("dataFasilitas", dataFasilitas.toString());
+                                i.putExtra("dataExtras", dataExtras.toString());
+                                context.startActivity(i);
+                                break;
+                            }
+                        }
+                    }
+                });
+                builder.create().show();
             }
         });
         holder.btnHapus.setOnClickListener(new View.OnClickListener() {

@@ -18,7 +18,7 @@
     <!--login register-->
     <string name="login">Login</string>
     <string name="lupa_password">Forget Password ?</string>
-    <string name="belum_punya_akun">Don\'t have account ? Please register here</string>
+    <string name="belum_punya_akun">Don\`t have account ? Please register here</string>
     <string name="reg_nama">Name</string>
     <string name="reg_email">Email</string>
     <string name="reg_no_hp">Phone Number</string>
@@ -44,6 +44,8 @@
     <string name="review">Review</string>
     <string name="reset">Reset</string>
     <string name="revisi">Revision</string>
+    <string name="hapus">Delete</string>
+    <string name="ubah">Edit</string>
 
     <!--dialog-->
     <string name="berhasil_disimpan">Data has been saved</string>
@@ -52,22 +54,22 @@
     <string name="gagal_diubah">Data cannot be changed !</string>
     <string name="berhasil_dihapus">Data is deleted successfully</string>
     <string name="gagal_dihapus">Data cannot be deleted !</string>
-    <string name="data_kosong">Data hasn\'t been fulfilled !</string>
+    <string name="data_kosong">Data hasn\`t been fulfilled !</string>
     <string name="gagal_login_not_match">Login Failed (Email and Password do not match) !</string>
     <string name="gagal_register">Register failed !</string>
     <string name="gagal_koneksi">Connection failed !</string>
     <string name="koneksi_internet_bermasalah">Internet connection trouble !</string>
 
-    <string name="data_properti_incaran_belum_lengkap">Desirable Property\'s Data hasn\'t been complete !</string>
+    <string name="data_properti_incaran_belum_lengkap">Desirable Property\`s Data hasn\`t been complete !</string>
     <string name="properti_satu_wajib_diisi">Property #1 should be fulfilled !</string>
-    <string name="catatan_belum_diisi">Note hasn\'t been filled !</string>
-    <string name="data_belum_dihitung">Data hasn\'t been calculated !</string>
+    <string name="catatan_belum_diisi">Note hasn\`t been filled !</string>
+    <string name="data_belum_dihitung">Data hasn\`t been calculated !</string>
 
     <string name="final_result">Final Result</string>
 
     <!--menu cicilan-->
     <string name="judul_tambah_cicilan">New Installment</string>
-    <string name="sub_judul_tambah_cicilan">Input installment\'s information :</string>
+    <string name="sub_judul_tambah_cicilan">Input installment\`s information :</string>
     <string name="pinjaman_kpr">Mortgage Loan</string>
     <string name="bunga_per_tahun">Interest Per Year (%)</string>
     <string name="tenor_lama_pinjaman">Term Of Loan (Months)</string>
@@ -76,7 +78,7 @@
     <string name="sisa_pokok_pinjaman">Remaining Principal Balance</string>
     <string name="cicilan">Installment</string>
     <string name="cicilan_floating">Floating Installment</string>
-    <string name="data_belum_lengkap">Data hasn\'t been filled !</string>
+    <string name="data_belum_lengkap">Data hasn\`t been filled !</string>
 
     <!--menu nilai pasar-->
     <string name="judul_nilai_pasar">New Market Value</string>
@@ -91,15 +93,15 @@
     <string name="properti_tiga">Property #3</string>
     <string name="properti_empat">Property #4</string>
     <string name="properti_lima">Property #5</string>
-    <string name="harga_jual_properti">Property\'s Selling Price</string>
-    <string name="luas_tanah">Land\'s Square Measure</string>
+    <string name="harga_jual_properti">Property\`s Selling Price</string>
+    <string name="luas_tanah">Land\`s Square Measure</string>
     <string name="luas_bangunan">Building Square Measure</string>
-    <string name="usia_bangunan">Building\'s Age</string>
-    <string name="usia_bangunan_tahun">Building\'s Age (Year)</string>
+    <string name="usia_bangunan">Building\`s Age</string>
+    <string name="usia_bangunan_tahun">Building\`s Age (Year)</string>
     <string name="harga_rata_bangunan">Per Meter  Average Price of Building </string>
-    <string name="harga_rata">Building\'s Average Price</string>
-    <string name="catatan_kondisi">Building\'s Condition Check Report</string>
-    <string name="catatan_survey">Location\'s Survey Report</string>
+    <string name="harga_rata">Building\`s Average Price</string>
+    <string name="catatan_kondisi">Building\`s Condition Check Report</string>
+    <string name="catatan_survey">Location\`s Survey Report</string>
     <string name="harga_pasaran_per_meter">Per Meter Market Price</string>
     <string name="perbandingan_properti_incaran">Desirable Property Comparison</string>
 
@@ -112,23 +114,23 @@
     <string name="pengeluaran">Spending</string>
     <string  name="upgrade_fasilitas">Facility Upgrade</string>
     <string name="tipe_kamar">Room Type</string>
-    <string name="jumlah_kamar">Room\'s Amount</string>
+    <string name="jumlah_kamar">Room\`s Amount</string>
     <string name="harga_kamar">Room Price</string>
     <string name="occupancy_rate">Occupancy Rate</string>
-    <string name="occupancy_rate_belum_diisi">Occupancy Rate hasn\'t been filled !</string>
+    <string name="occupancy_rate_belum_diisi">Occupancy Rate hasn\`t been filled !</string>
     <string name="tambah_kamar">Add Room</string>
     <string name="total_penghasilan">Income Total</string>
-    <string name="keterangan_pemasukan">Income\'s Information</string>
-    <string name="jumlah_pemasukan">Income\'s Amount</string>
+    <string name="keterangan_pemasukan">Income\`s Information</string>
+    <string name="jumlah_pemasukan">Income\`s Amount</string>
     <string name="tambah_pemasukan">Add Income</string>
     <string name="penghasilan_sewa_kamar">Room Rent Income</string>
     <string name="total_pemasukan">Income Total </string>
-    <string name="keterangan_pengeluaran">Spending\'s Information</string>
-    <string name="jumlah_pengeluaran">Spending\'s Amount</string>
+    <string name="keterangan_pengeluaran">Spending\`s Information</string>
+    <string name="jumlah_pengeluaran">Spending\`s Amount</string>
     <string name="tambah_pengeluaran">Add Spend</string>
     <string name="total_pengeluaran">Spending Total</string>
-    <string name="nama_fasilitas">Facility\'s Name</string>
-    <string name="kenaikan_harga">Price\'s Increasing</string>
+    <string name="nama_fasilitas">Facility\`s Name</string>
+    <string name="kenaikan_harga">Price\`s Increasing</string>
     <string name="tambah_fasilitas">Add Facility</string>
     <string name="net_operating_income">Net Operating Income</string>
     <string name="total_upgrade">Total Upgrade</string>
@@ -143,6 +145,19 @@
     <string name="ad_id_banner_top">ca-app-pub-3950402057146083/6676024221</string>
     <string name="ad_id_banner_down">ca-app-pub-3950402057146083/1031555153</string>
     <string name="ad_id_interstitial">ca-app-pub-3950402057146083/1437559897</string>
+
+    //question
+    <string name="question_1">How to calculate my installment amount ?</string>
+    <string name="question_2">How to calculate the new market value ?</string>
+    <string name="question_3">How to calculate the estimated cash flow property ?</string>
+    <string name="question_4">How if I have a problem with this application ?</string>
+    <string name="deskripsi_1">If you have made the plan to take mortgage debt for the property you want to buy, you can calculate the amount of installments in this application.</string>
+    <string name="deskripsi_2">If you have calculated the number of installments, then the next step is calculating the market value. This value will calculate the price range of the property’s market you want to buy.</string>
+    <string name="deskripsi_3">Usually, the Properties that are purchased primarily such as apartments, houses, or villas. Cash Flow can be calculated with this application.</string>
+    <string name="answer_1">a. Click `Installment Calculator`.\nb. The `New Installment` dialog box will appear and fill in the installment details such as `Apartment`, click `Add`.\nc. Then fill in total mortgage loan, interest per annum (%), length of loan (month), fixed interest (month), and floating interest per year (%), click `Calculate`.\nd. It will appear automatically the results of `Time Principal Loans`, `Installment` and `Installment Floating`.\ne. Click the floppy mark in the top right corner to save the data.</string>
+    <string name="answer_2">a. Click `Market Value Calculator`.\nb. Fill in all of required information from `Selling Price` to `Location Survey Note`, when you finish, click `Continue`.\nc. The page will be switched to the next section  `Property # 1`, in this app you can add up to Listing # 5. Fill in all details of `Property Sales Price` to `Average Building Price Per Meter`.\nd. You Can click `back`, `Review` or `advanced` if you still want to calculate other properties.\ne. When you think it has been finished, click `Review`.\nf. A page will be appeared the new market value table data, click `Continue`.\ng. You will get `Final Result`.\nh. Click the floppy mark in the top right corner to save the data.</string>
+    <string name="answer_3">a. Click `Cash Flow Calculator`.\nb. It will appear some pages like `Rooms`, `Entry`, `Expenses` and `Facility Upgrade`.\nc. Fill in all required information such as room type and amount of expenses.\nd. Next, fill in all parts of the page and the required information.\ne. Click `count` to get the result.</string>
+    <string name="answer_4">Please, contact this email for your support : Cs@luckynineapps.com</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

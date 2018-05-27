@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TableLayout
+                            android:id="@+id/table_kamar"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:stretchColumns="0">
+
+                            <TableRow
+                                android:background="@drawable/table_row_bg"
+                                android:baselineAligned="false"
+                                android:paddingBottom="8dp"
+                                android:paddingLeft="4dp"
+                                android:paddingRight="4dp"
+                                android:paddingTop="8dp">
+
+                                <TextView
+                                    android:background="@drawable/table_cell_bg"
+                                    android:padding="8dp"
+                                    android:text="@string/tipe_kamar"
+                                    android:textColor="@color/colorAccent"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:background="@drawable/table_cell_bg"
+                                    android:gravity="center"
+                                    android:padding="8dp"
+                                    android:text="@string/harga_kamar"
+                                    android:textColor="@color/colorAccent"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:background="@drawable/table_cell_bg"
+                                    android:gravity="center"
+                                    android:padding="8dp"
+                                    android:text="@string/jumlah_kamar"
+                                    android:textColor="@color/colorAccent"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:background="@drawable/table_cell_bg"
+                                    android:gravity="center"
+                                    android:padding="8dp"
+                                    android:text="@string/total_penghasilan"
+                                    android:textColor="@color/colorAccent"
+                                    android:textStyle="bold" />
+
+                            </TableRow>
+
+                        </TableLayout>
+
+                        <TableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="8dp"
+                            android:stretchColumns="*">
+
+                            <TableRow
+                                android:background="@drawable/table_row_last_bg"
+                                android:padding="5dp">
+
+                                <TextView
+                                    android:background="@drawable/table_cell_bg"
+                                    android:padding="8dp"
+                                    android:text="@string/occupancy_rate"
+                                    android:textColor="@color/colorAccent"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txt_occupancy_rate"
+                                    android:background="@drawable/table_cell_bg"
+                                    android:padding="8dp"
+                                    android:text="-"
+                                    android:textColor="@color/colorAccent" />
+
+                            </TableRow>
+
+                        </TableLayout>
+
+                        <TableLayout
+                            android:id="@+id/table_pemasukan"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="8dp"
+                            android:stretchColumns="*">
+
+                            <TableRow
+                                android:background="@drawable/table_row_bg"
+                                android:baselineAligned="false"
+                                android:paddingBottom="8dp"
+                                android:paddingLeft="4dp"
+                                android:paddingRight="4dp"
+                                android:paddingTop="8dp">
+
+                                <TextView
+                                    android:background="@drawable/table_cell_bg"
+                                    android:padding="8dp"
+                                    android:text="@string/pemasukan"
+                                    android:textColor="@color/colorAccent"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:background="@drawable/table_cell_bg"
+                                    android:gravity="center"
+                                    android:padding="8dp"
+                                    android:text="@string/jumlah_pemasukan"
+                                    android:textColor="@color/colorAccent"
+                                    android:textStyle="bold" />
+
+                            </TableRow>
+
+                        </TableLayout>
+
+                        <TableLayout
+                            android:id="@+id/table_pengeluaran"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="8dp"
+                            android:stretchColumns="*">
+
+                            <TableRow
+                                android:background="@drawable/table_row_bg"
+                                android:baselineAligned="false"
+                                android:paddingBottom="8dp"
+                                android:paddingLeft="4dp"
+                                android:paddingRight="4dp"
+                                android:paddingTop="8dp">
+
+                                <TextView
+                                    android:background="@drawable/table_cell_bg"
+                                    android:padding="8dp"
+                                    android:text="@string/pengeluaran"
+                                    android:textColor="@color/colorAccent"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:background="@drawable/table_cell_bg"
+                                    android:gravity="center"
+                                    android:padding="8dp"
+                                    android:text="@string/jumlah_pengeluaran"
+                                    android:textColor="@color/colorAccent"
+                                    android:textStyle="bold" />
+
+                            </TableRow>
+
+                        </TableLayout>
+
+                        <TableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="8dp"
+                            android:stretchColumns="*">
+
+                            <TableRow
+                                android:background="@drawable/table_row_last_bg"
+                                android:padding="5dp">
+
+                                <TextView
+                                    android:background="@drawable/table_cell_bg"
+                                    android:padding="8dp"
+                                    android:text="@string/net_operating_income"
+                                    android:textColor="@color/colorAccent"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txt_net_operating_income"
+                                    android:background="@drawable/table_cell_bg"
+                                    android:padding="8dp"
+                                    android:text="-"
+                                    android:textColor="@color/colorAccent" />
+
+                            </TableRow>
+
+                        </TableLayout>
+
+                        <TableLayout
+                            android:id="@+id/table_upgrade"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="8dp"
+                            android:stretchColumns="*">
+
+                            <TableRow
+                                android:background="@drawable/table_row_bg"
+                                android:baselineAligned="false"
+                                android:paddingBottom="8dp"
+                                android:paddingLeft="4dp"
+                                android:paddingRight="4dp"
+                                android:paddingTop="8dp">
+
+                                <TextView
+                                    android:background="@drawable/table_cell_bg"
+                                    android:padding="8dp"
+                                    android:text="@string/upgrade_fasilitas"
+                                    android:textColor="@color/colorAccent"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:background="@drawable/table_cell_bg"
+                                    android:gravity="center"
+                                    android:padding="8dp"
+                                    android:text="@string/kenaikan_harga"
+                                    android:textColor="@color/colorAccent"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:background="@drawable/table_cell_bg"
+                                    android:gravity="center"
+                                    android:padding="8dp"
+                                    android:text="@string/jumlah_kamar"
+                                    android:textColor="@color/colorAccent"
+                                    android:textStyle="bold" />
+
+                            </TableRow>
+
+                        </TableLayout>
+
+                        <TableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="8dp"
+                            android:stretchColumns="*">
+
+                            <TableRow
+                                android:background="@drawable/table_row_last_bg"
+                                android:padding="5dp">
+
+                                <TextView
+                                    android:background="@drawable/table_cell_bg"
+                                    android:padding="8dp"
+                                    android:text="@string/net_operating_income_future"
+                                    android:textColor="@color/colorAccent"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txt_net_operating_income_future"
+                                    android:background="@drawable/table_cell_bg"
+                                    android:padding="8dp"
+                                    android:text="-"
+                                    android:textColor="@color/colorAccent" />
+
+                            </TableRow>
+
+                        </TableLayout>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,6 +1,8 @@
 package com.analisaproperti.analisaproperti.adapter.cicilan;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -13,6 +15,7 @@ import android.widget.Toast;
 
 import com.analisaproperti.analisaproperti.R;
 import com.analisaproperti.analisaproperti.activity.cicilan.CicilanActivity;
+import com.analisaproperti.analisaproperti.activity.cicilan.DetailCicilanActivity;
 import com.analisaproperti.analisaproperti.api.BaseApiService;
 import com.analisaproperti.analisaproperti.api.UtilsApi;
 import com.analisaproperti.analisaproperti.model.cicilan.Cicilan;
@@ -71,10 +74,29 @@ public class CicilanAdapter extends RecyclerView.Adapter<CicilanAdapter.ViewHold
         holder.cvCicilan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(context, CicilanActivity.class);
-                i.putExtra("Cicilan", (ArrayList<Cicilan>) listCicilan);
-                i.putExtra("position", position);
-                context.startActivity(i);
+                final CharSequence[] dialogitem = {"Detail Data", "Edit Data"};
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setItems(dialogitem, new DialogInterface.OnClickListener(){
+                    public void onClick(DialogInterface dialog, int item){
+                        switch(item){
+                            case 0 : {
+                                Intent i = new Intent(context, DetailCicilanActivity.class);
+                                i.putExtra("Cicilan", (ArrayList<Cicilan>) listCicilan);
+                                i.putExtra("position", position);
+                                context.startActivity(i);
+                                break;
+                            }
+                            case 1 : {
+                                Intent i = new Intent(context, CicilanActivity.class);
+                                i.putExtra("Cicilan", (ArrayList<Cicilan>) listCicilan);
+                                i.putExtra("position", position);
+                                context.startActivity(i);
+                                break;
+                            }
+                        }
+                    }
+                });
+                builder.create().show();
             }
         });
         holder.btnHapusCicilan.setOnClickListener(new View.OnClickListener() {
@@ -100,7 +122,6 @@ public class CicilanAdapter extends RecyclerView.Adapter<CicilanAdapter.ViewHold
                         Toast.makeText(context, context.getString(R.string.koneksi_internet_bermasalah), Toast.LENGTH_SHORT).show();
                     }
                 });
-                notifyDataSetChanged();
             }
         });
     }

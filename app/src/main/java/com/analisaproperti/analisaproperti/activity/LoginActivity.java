@@ -160,6 +160,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             Intent i = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(i);
             overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+            finish();
         }
 
         loadingDaftar = new ProgressDialog(this);

@@ -269,25 +269,27 @@ public class HasilNilaiPasarActivity extends AppCompatActivity {
                 if(getIntent().getIntExtra("position", 0)==999) {
                     actionSave();
 
+                    final String id = idNilaiPasar;
+
                     PropertiNilaiPasar dataProperti;
 
                     dataProperti = listAngkaNilaiPasar.get(0);
-                    saveProperti(idNilaiPasar, ""+1, ""+dataProperti.getHargaJualProperti(), ""+dataProperti.getLuasTanah(),""+dataProperti.getLuasBangunan(),""+dataProperti.getUsiaBangunan(),""+dataProperti.getHargaRataPerMeter(),""+dataProperti.getHargaBangunanBaru(),""+dataProperti.getHargaBangunanSaatIni(),""+dataProperti.getHargaTanahPerMeter());
+                    saveProperti(id, ""+1, ""+dataProperti.getHargaJualProperti(), ""+dataProperti.getLuasTanah(),""+dataProperti.getLuasBangunan(),""+dataProperti.getUsiaBangunan(),""+dataProperti.getHargaRataPerMeter(),""+dataProperti.getHargaBangunanBaru(),""+dataProperti.getHargaBangunanSaatIni(),""+dataProperti.getHargaTanahPerMeter());
 
                     dataProperti = listAngkaNilaiPasar.get(1);
-                    saveProperti(idNilaiPasar, ""+2, ""+dataProperti.getHargaJualProperti(), ""+dataProperti.getLuasTanah(),""+dataProperti.getLuasBangunan(),""+dataProperti.getUsiaBangunan(),""+dataProperti.getHargaRataPerMeter(),""+dataProperti.getHargaBangunanBaru(),""+dataProperti.getHargaBangunanSaatIni(),""+dataProperti.getHargaTanahPerMeter());
+                    saveProperti(id, ""+2, ""+dataProperti.getHargaJualProperti(), ""+dataProperti.getLuasTanah(),""+dataProperti.getLuasBangunan(),""+dataProperti.getUsiaBangunan(),""+dataProperti.getHargaRataPerMeter(),""+dataProperti.getHargaBangunanBaru(),""+dataProperti.getHargaBangunanSaatIni(),""+dataProperti.getHargaTanahPerMeter());
 
-                    dataProperti = listAngkaNilaiPasar.get(2);
-                    saveProperti(idNilaiPasar, ""+3, ""+dataProperti.getHargaJualProperti(), ""+dataProperti.getLuasTanah(),""+dataProperti.getLuasBangunan(),""+dataProperti.getUsiaBangunan(),""+dataProperti.getHargaRataPerMeter(),""+dataProperti.getHargaBangunanBaru(),""+dataProperti.getHargaBangunanSaatIni(),""+dataProperti.getHargaTanahPerMeter());
-
-                    dataProperti = listAngkaNilaiPasar.get(3);
-                    saveProperti(idNilaiPasar, ""+4, ""+dataProperti.getHargaJualProperti(), ""+dataProperti.getLuasTanah(),""+dataProperti.getLuasBangunan(),""+dataProperti.getUsiaBangunan(),""+dataProperti.getHargaRataPerMeter(),""+dataProperti.getHargaBangunanBaru(),""+dataProperti.getHargaBangunanSaatIni(),""+dataProperti.getHargaTanahPerMeter());
-
-                    dataProperti = listAngkaNilaiPasar.get(4);
-                    saveProperti(idNilaiPasar, ""+5, ""+dataProperti.getHargaJualProperti(), ""+dataProperti.getLuasTanah(),""+dataProperti.getLuasBangunan(),""+dataProperti.getUsiaBangunan(),""+dataProperti.getHargaRataPerMeter(),""+dataProperti.getHargaBangunanBaru(),""+dataProperti.getHargaBangunanSaatIni(),""+dataProperti.getHargaTanahPerMeter());
-
-                    dataProperti = listAngkaNilaiPasar.get(5);
-                    saveProperti(idNilaiPasar, ""+6, ""+dataProperti.getHargaJualProperti(), ""+dataProperti.getLuasTanah(),""+dataProperti.getLuasBangunan(),""+dataProperti.getUsiaBangunan(),""+dataProperti.getHargaRataPerMeter(),""+dataProperti.getHargaBangunanBaru(),""+dataProperti.getHargaBangunanSaatIni(),""+dataProperti.getHargaTanahPerMeter());
+//                    dataProperti = listAngkaNilaiPasar.get(2);
+//                    saveProperti(id, ""+3, ""+dataProperti.getHargaJualProperti(), ""+dataProperti.getLuasTanah(),""+dataProperti.getLuasBangunan(),""+dataProperti.getUsiaBangunan(),""+dataProperti.getHargaRataPerMeter(),""+dataProperti.getHargaBangunanBaru(),""+dataProperti.getHargaBangunanSaatIni(),""+dataProperti.getHargaTanahPerMeter());
+//
+//                    dataProperti = listAngkaNilaiPasar.get(3);
+//                    saveProperti(id, ""+4, ""+dataProperti.getHargaJualProperti(), ""+dataProperti.getLuasTanah(),""+dataProperti.getLuasBangunan(),""+dataProperti.getUsiaBangunan(),""+dataProperti.getHargaRataPerMeter(),""+dataProperti.getHargaBangunanBaru(),""+dataProperti.getHargaBangunanSaatIni(),""+dataProperti.getHargaTanahPerMeter());
+//
+//                    dataProperti = listAngkaNilaiPasar.get(4);
+//                    saveProperti(id, ""+5, ""+dataProperti.getHargaJualProperti(), ""+dataProperti.getLuasTanah(),""+dataProperti.getLuasBangunan(),""+dataProperti.getUsiaBangunan(),""+dataProperti.getHargaRataPerMeter(),""+dataProperti.getHargaBangunanBaru(),""+dataProperti.getHargaBangunanSaatIni(),""+dataProperti.getHargaTanahPerMeter());
+//
+//                    dataProperti = listAngkaNilaiPasar.get(5);
+//                    saveProperti(id, ""+6, ""+dataProperti.getHargaJualProperti(), ""+dataProperti.getLuasTanah(),""+dataProperti.getLuasBangunan(),""+dataProperti.getUsiaBangunan(),""+dataProperti.getHargaRataPerMeter(),""+dataProperti.getHargaBangunanBaru(),""+dataProperti.getHargaBangunanSaatIni(),""+dataProperti.getHargaTanahPerMeter());
 
                 }
                 else{

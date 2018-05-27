@@ -281,7 +281,7 @@ public class NilaiPasarActivity extends AppCompatActivity {
                 etCatatanKondisiBangunan.setText(catatanKondisi);
                 etCatatanSurveyLokasi.setText(catatanSurvey);
 
-                etHargaJualProperty.setText(""+hargaJualProperty);
+                etHargaJualProperty.setText(String.valueOf(hargaJualProperty));
                 etLuasTanah.setText(""+luasTanah);
                 etLuasBangunan.setText(""+luasBangunan);
                 etUsiaBangunan.setText(""+usiaBangunan);
@@ -597,6 +597,9 @@ public class NilaiPasarActivity extends AppCompatActivity {
         else if(TextUtils.isEmpty(etHargaJualPropertySatu.getText().toString()) || TextUtils.isEmpty(etLuasTanahSatu.getText().toString()) || TextUtils.isEmpty(etLuasBangunanSatu.getText().toString()) || TextUtils.isEmpty(etUsiaBangunanSatu.getText().toString()) || TextUtils.isEmpty(etHargaRataBangunanPerMeterSatu.getText().toString())){
             Toast.makeText(this, getString(R.string.properti_satu_wajib_diisi), Toast.LENGTH_SHORT).show();
         }
+        else if(TextUtils.isEmpty(etCatatanKondisiBangunan.getText().toString()) || TextUtils.isEmpty(etCatatanSurveyLokasi.getText().toString())){
+            Toast.makeText(this, getString(R.string.catatan_belum_diisi), Toast.LENGTH_SHORT).show();
+        }
         else{
 
             count = 6;
@@ -641,13 +644,8 @@ public class NilaiPasarActivity extends AppCompatActivity {
 
             checkValue();
 
-            if(TextUtils.isEmpty(etCatatanKondisiBangunan.getText().toString()) || TextUtils.isEmpty(etCatatanSurveyLokasi.getText().toString())){
-                Toast.makeText(this, getString(R.string.catatan_belum_diisi), Toast.LENGTH_SHORT).show();
-            }
-            else{
-                catatanKondisi = etCatatanKondisiBangunan.getText().toString();
-                catatanSurvey = etCatatanSurveyLokasi.getText().toString();
-            }
+            catatanKondisi = etCatatanKondisiBangunan.getText().toString();
+            catatanSurvey = etCatatanSurveyLokasi.getText().toString();
 
             Intent i = new Intent(NilaiPasarActivity.this, ReviewNilaiPasarActivity.class);
             i.putExtra("Count", count);

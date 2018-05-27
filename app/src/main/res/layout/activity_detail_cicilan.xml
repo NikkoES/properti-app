@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:stretchColumns="*">
+
+                            <TableRow
+                                android:background="@drawable/table_row_bg"
+                                android:baselineAligned="false"
+                                android:paddingLeft="4dp"
+                                android:paddingRight="4dp"
+                                android:paddingTop="8dp"
+                                android:paddingBottom="8dp">
+
+                                <TextView
+                                    android:background="@drawable/table_cell_bg"
+                                    android:padding="8dp"
+                                    android:text="@string/pinjaman_kpr"
+                                    android:textColor="@color/colorAccent"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txt_pinjaman_kpr"
+                                    android:gravity="center"
+                                    android:background="@drawable/table_cell_bg"
+                                    android:padding="8dp"
+                                    android:text="-"
+                                    android:textColor="@color/colorAccent" />
+
+                                <TextView
+                                    android:gravity="center"
+                                    android:background="@drawable/table_cell_bg"
+                                    android:padding="8dp"
+                                    android:text="@string/tenor_bunga_fix"
+                                    android:textColor="@color/colorAccent"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txt_tenor_bunga_Fix"
+                                    android:gravity="center"
+                                    android:background="@drawable/table_cell_bg"
+                                    android:padding="8dp"
+                                    android:text="-"
+                                    android:textColor="@color/colorAccent" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:background="@drawable/table_row_bg"
+                                android:baselineAligned="false"
+                                android:paddingLeft="4dp"
+                                android:paddingRight="4dp"
+                                android:paddingTop="8dp"
+                                android:paddingBottom="8dp">
+
+                                <TextView
+                                    android:background="@drawable/table_cell_bg"
+                                    android:padding="8dp"
+                                    android:text="@string/bunga_per_tahun"
+                                    android:textColor="@color/colorAccent"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txt_bunga_per_tahun"
+                                    android:gravity="center"
+                                    android:background="@drawable/table_cell_bg"
+                                    android:padding="8dp"
+                                    android:text="-"
+                                    android:textColor="@color/colorAccent" />
+
+                                <TextView
+                                    android:gravity="center"
+                                    android:background="@drawable/table_cell_bg"
+                                    android:padding="8dp"
+                                    android:text="@string/sisa_pokok_pinjaman"
+                                    android:textColor="@color/colorAccent"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txt_sisa_pokok_pinjaman"
+                                    android:gravity="center"
+                                    android:background="@drawable/table_cell_bg"
+                                    android:padding="8dp"
+                                    android:text="-"
+                                    android:textColor="@color/colorAccent" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:background="@drawable/table_row_bg"
+                                android:baselineAligned="false"
+                                android:paddingLeft="4dp"
+                                android:paddingRight="4dp"
+                                android:paddingTop="8dp"
+                                android:paddingBottom="8dp">
+
+                                <TextView
+                                    android:background="@drawable/table_cell_bg"
+                                    android:padding="8dp"
+                                    android:text="@string/tenor_lama_pinjaman"
+                                    android:textColor="@color/colorAccent"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txt_tenor_lama_pinjaman"
+                                    android:gravity="center"
+                                    android:background="@drawable/table_cell_bg"
+                                    android:padding="8dp"
+                                    android:text="-"
+                                    android:textColor="@color/colorAccent" />
+
+                                <TextView
+                                    android:gravity="center"
+                                    android:background="@drawable/table_cell_bg"
+                                    android:padding="8dp"
+                                    android:text="@string/bunga_floating"
+                                    android:textColor="@color/colorAccent"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txt_bunga_floating"
+                                    android:gravity="center"
+                                    android:background="@drawable/table_cell_bg"
+                                    android:padding="8dp"
+                                    android:text="-"
+                                    android:textColor="@color/colorAccent" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:background="@drawable/table_row_last_bg"
+                                android:baselineAligned="false"
+                                android:paddingLeft="4dp"
+                                android:paddingRight="4dp"
+                                android:paddingTop="8dp"
+                                android:paddingBottom="8dp">
+
+                                <TextView
+                                    android:background="@drawable/table_cell_bg"
+                                    android:padding="8dp"
+                                    android:text="@string/cicilan"
+                                    android:textColor="@color/colorAccent"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txt_cicilan"
+                                    android:gravity="center"
+                                    android:background="@drawable/table_cell_bg"
+                                    android:padding="8dp"
+                                    android:text="-"
+                                    android:textColor="@color/colorAccent" />
+
+                                <TextView
+                                    android:gravity="center"
+                                    android:background="@drawable/table_cell_bg"
+                                    android:padding="8dp"
+                                    android:text="@string/cicilan_floating"
+                                    android:textColor="@color/colorAccent"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txt_cicilan_floating"
+                                    android:gravity="center"
+                                    android:background="@drawable/table_cell_bg"
+                                    android:padding="8dp"
+                                    android:text="-"
+                                    android:textColor="@color/colorAccent"
+                                    />
+
+                            </TableRow>
+
+
+                        </TableLayout>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,11 +1,13 @@
 package com.analisaproperti.analisaproperti.activity;
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -165,6 +167,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_setting:
                 i = new Intent(getApplicationContext(), PengaturanBahasaActivity.class);
                 startActivity(i);
+                break;
+            case R.id.nav_bantuan:
+                i = new Intent(getApplicationContext(), BantuanActivity.class);
+                startActivity(i);
+                break;
+            case R.id.nav_beri_5_bintang:
+                Uri uri = Uri.parse("market://details?id=" + getApplicationContext().getPackageName());
+                Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
+                goToMarket.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY |
+                        Intent.FLAG_ACTIVITY_NEW_DOCUMENT |
+                        Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+                try {
+                    startActivity(goToMarket);
+                }
+                catch (ActivityNotFoundException e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("http://play.google.com/store/apps/details?id=" + getApplicationContext().getPackageName())));
+                }
                 break;
             case R.id.nav_keluar:
                 logout();

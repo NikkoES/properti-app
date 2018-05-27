@@ -37,6 +37,8 @@
     <string name="review">Review</string>
     <string name="reset">Reset</string>
     <string name="revisi">Revisi</string>
+    <string name="hapus">Hapus</string>
+    <string name="ubah">Ubah</string>
 
     <!--dialog-->
     <string name="berhasil_disimpan">Data berhasil disimpan</string>
@@ -145,6 +147,19 @@
 
     <string name="facebook_app_id">1741753252610047</string>
     <string name="facebook_login_protocol_scheme">fb1741753252610047</string>
+
+    //question
+    <string name="question_1">Bagaimana cara menghitung jumlah cicilan saya ?</string>
+    <string name="question_2">Bagaimana cara menghitung nilai pasar baru ?</string>
+    <string name="question_3">Bagaimana menghitung perkiraan cash flow property ?</string>
+    <string name="question_4">Bagaimana jika saya mendapat kesulitan dalam aplikasi ?</string>
+    <string name="deskripsi_1">Apabila Anda sudah berencana untuk melakukan hutang KPR atas properti yang ingin dibeli, maka Anda bisa menghitung jumlah cicilan di aplikasi ini.</string>
+    <string name="deskripsi_2">Jika Anda sudah menghitung jumlah cicilan, maka berikutnya adalah menghitung nilai pasar. Nilai ini akan mengkalkulasikan kisaran harga pasar properti yang ingin dibeli.</string>
+    <string name="deskripsi_3">Properti yang dibeli terutama apartemen, rumah, atau vila, bisa dihitung cash flow-nya dengan aplikasi.</string>
+    <string name="answer_1">a. Klik ‘Kalkulator Cicilan’.\nb. Akan muncul kotak dialog ‘Cicilan Baru’ lalu isi dengan keterangan cicilan, misalnya ‘Apartemen’, klik ‘Tambah’.\nc. Lalu isi total pinjaman KPR, bunga per tahun dalam %, lama pinjaman (bulan), bunga fix (bulan), dan bunga floating per tahun (%), klik ‘Hitung’.\nd. Otomatis akan muncul hasil ‘Sisa Pokok Pinjaman’, ‘Cicilan’ dan ‘Cicilan Floating’.\ne. Klik tanda disket di pojok kanan atas untuk menyimpan data.</string>
+    <string name="answer_2">a. Klik ‘Kalkulator Nilai Pasar’.\nb. Isi semua keterangan yang dibutuhkan dari ‘Harga Jual Properti’  sampai ‘Catatan Survey Lokasi’, setelah selesai klik ‘Lanjut’.\nc. Halaman akan beralih pada bagian berikutnya yaitu ‘Properti #1’, di aplikasi ini bisa ditambahkan sampai Properti #5. Isi semua keterangan dari ‘Harga Jual Properti’ sampai ‘Harga Rata-rata Bangunan Per Meter’.\nd. Bisa klik ‘kembali’. ‘Review’ atau ‘lanjut’ jika masih ingin menghitung properti lainnya.\ne. Jika selesai klik ‘Review’.\nf. Akan muncul halaman yang menunjukkan data tabel nilai pasar baru, klik ‘Lanjut’.\ng. Anda akan mendapatkan ‘Hasil Akhir’.\nh. Klik tanda disket di pojok kanan atas untuk menyimpan data.</string>
+    <string name="answer_3">a. Klik ‘Kalkulator Cash Flow’.\nb. Akan muncul halaman ‘Kamar’, ‘Pemasukan’, ‘Pengeluaran’ dan ‘Upgrade Fasilitas’.\nc. Isi semua keterangan yang dibutuhkan seperti tipe kamar dan jumlah pengeluaran.\nd. Berikutnya isi semua bagian halaman dan informasi yang dibutuhkan.\ne. Klik ‘hitung’ agar mendapat hasilnya.</string>
+    <string name="answer_4">Silakan mengirimkan email ke tim support kami: Cs@luckynineapps.com</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
