@@ -51,6 +51,7 @@ public class CashFlowFragment extends Fragment {
     private FloatingActionButton fab;
     EditText etKeterangan;
     TextView txtJudul;
+    TextView tekanTombol;
 
     private RecyclerView rvHome;
     private CashFlowAdapter adapter;
@@ -102,6 +103,7 @@ public class CashFlowFragment extends Fragment {
         }
 
         rvHome = (RecyclerView) view.findViewById(R.id.rv_cash_flow);
+        tekanTombol = (TextView) view.findViewById(R.id.tekan_untuk_memulai);
 
         adapter = new CashFlowAdapter(getContext(), cashFlowList);
 
@@ -169,6 +171,15 @@ public class CashFlowFragment extends Fragment {
                     loading.dismiss();
 
                     cashFlowList = response.body().getData();
+
+                    if(cashFlowList.size()==0){
+                        tekanTombol.setVisibility(View.VISIBLE);
+                        rvHome.setVisibility(View.GONE);
+                    }
+                    else{
+                        tekanTombol.setVisibility(View.GONE);
+                        rvHome.setVisibility(View.VISIBLE);
+                    }
 
                     rvHome.setAdapter(new CashFlowAdapter(getContext(), cashFlowList));
                     adapter.notifyDataSetChanged();

@@ -46,6 +46,9 @@
     <string name="hapus">Hapus</string>
     <string name="ubah">Ubah</string>
 
+    <string name="pilih_salah_satu">Pilih salah satu :</string>
+    <string name="tekan_tombol">Tekan tombol tambah di bawah ini untuk mulai menghitung</string>
+
     <!--dialog-->
     <string name="berhasil_disimpan">Data berhasil disimpan</string>
     <string name="gagal_disimpan">Data gagal disimpan !</string>

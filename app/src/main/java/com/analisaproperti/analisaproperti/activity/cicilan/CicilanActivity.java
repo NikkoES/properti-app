@@ -1,7 +1,9 @@
 package com.analisaproperti.analisaproperti.activity.cicilan;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -10,11 +12,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -55,14 +54,15 @@ public class CicilanActivity extends AppCompatActivity {
 
     @BindView(R.id.et_pinjaman_kpr)
     EditText etPinjamanKpr;
-    @BindView(R.id.spin_bunga_per_tahun)
-    Spinner spinBungaPerTahun;
-    @BindView(R.id.spin_tenor_peminjaman)
-    Spinner spinTenorPeminjaman;
-    @BindView(R.id.spin_tenor_bunga_fix)
-    Spinner spinTenorBungaFix;
-    @BindView(R.id.spin_bunga_floating_per_tahun)
-    Spinner spinBungaFloatingPerTahun;
+    @BindView(R.id.et_bunga_per_tahun)
+    EditText etBungaPerTahun;
+    @BindView(R.id.et_lama_pinjaman)
+    EditText etTenorLamaPinjaman;
+    @BindView(R.id.et_tenor_bunga_fix)
+    EditText etTenorBungaFix;
+    @BindView(R.id.et_bunga_floating)
+    EditText etBungaFloating;
+
     @BindView(R.id.txt_sisa_pokok_pinjaman)
     TextView txtSisaPokokPinjaman;
     @BindView(R.id.txt_cicilan)
@@ -154,6 +154,10 @@ public class CicilanActivity extends AppCompatActivity {
             cicilanFloating = Integer.parseInt(dataCicilan.getCicilanSetelahFloating());
 
             etPinjamanKpr.setText(""+loPinjamanKpr);
+            etBungaPerTahun.setText(""+bungaPerTahun);
+            etTenorLamaPinjaman.setText(""+tenorLamaPinjaman);
+            etTenorBungaFix.setText(""+tenorBungaFix);
+            etBungaFloating.setText(""+bungaFloatingPerTahun);
             txtSisaPokokPinjaman.setText(concat(currencyFormatterLong(loSisaPokokPinjaman)));
             txtCicilan.setText(concat(currencyFormatter(cicilan)));
             txtCicilanFloating.setText(concat(currencyFormatter(cicilanFloating)));
@@ -162,118 +166,118 @@ public class CicilanActivity extends AppCompatActivity {
             idCicilan = getIntent().getStringExtra("id_cicilan");
             keterangan = getIntent().getStringExtra("keterangan");
         }
-
-        setSpinner();
     }
 
-    public void setSpinner(){
-        listBungaPerTahun.add("--");
+    @OnClick(R.id.et_bunga_per_tahun)
+    public void setBungaPerTahun(){
+        AlertDialog.Builder builderBungaPerTahun = new AlertDialog.Builder(this);
+        builderBungaPerTahun.setTitle(getString(R.string.pilih_salah_satu));
+
+        final ArrayAdapter<String> arrayBungaPerTahun = new ArrayAdapter<String>(this, android.R.layout.select_dialog_singlechoice);
         for(i=1; i<=20; i++){
-            listBungaPerTahun.add(""+i);
+            arrayBungaPerTahun.add(""+i);
         }
-        ArrayAdapter<String> dataBungaPerTahun = new ArrayAdapter<>(getApplicationContext(),
-                android.R.layout.simple_spinner_item, listBungaPerTahun);
-        dataBungaPerTahun.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinBungaPerTahun.setAdapter(dataBungaPerTahun);
-        dataBungaPerTahun.notifyDataSetChanged();
 
-        spinBungaPerTahun.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        builderBungaPerTahun.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if(i>0){
-                    bungaPerTahun = Integer.parseInt(adapterView.getItemAtPosition(i).toString());
-                }
-                else if(i==0){
-                    bungaPerTahun = 0;
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
             }
         });
 
-        listTenorPinjaman.add("--");
+        builderBungaPerTahun.setAdapter(arrayBungaPerTahun, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String strName = arrayBungaPerTahun.getItem(which);
+                etBungaPerTahun.setText(strName);
+                bungaPerTahun = Integer.parseInt(strName);
+            }
+        });
+        builderBungaPerTahun.show();
+    }
+
+    @OnClick(R.id.et_lama_pinjaman)
+    public void setLamaPinjaman(){
+        AlertDialog.Builder buiderTenorPinjaman = new AlertDialog.Builder(this);
+        buiderTenorPinjaman.setTitle(getString(R.string.pilih_salah_satu));
+
+        final ArrayAdapter<String> arrayTenorPinjaman = new ArrayAdapter<String>(this, android.R.layout.select_dialog_singlechoice);
         for(i=12; i<=240; i+=12){
-            listTenorPinjaman.add(""+i);
+            arrayTenorPinjaman.add(""+i);
         }
-        ArrayAdapter<String> dataTenorPinjaman = new ArrayAdapter<>(getApplicationContext(),
-                android.R.layout.simple_spinner_item, listTenorPinjaman);
-        dataTenorPinjaman.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinTenorPeminjaman.setAdapter(dataTenorPinjaman);
-        dataTenorPinjaman.notifyDataSetChanged();
 
-        spinTenorPeminjaman.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        buiderTenorPinjaman.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if(i>0){
-                    tenorLamaPinjaman = Integer.parseInt(adapterView.getItemAtPosition(i).toString());
-                }
-                else if(i==0){
-                    tenorLamaPinjaman = 0;
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
             }
         });
 
-        listTenorBungaFix.add("--");
+        buiderTenorPinjaman.setAdapter(arrayTenorPinjaman, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String strName = arrayTenorPinjaman.getItem(which);
+                etTenorLamaPinjaman.setText(strName);
+                tenorLamaPinjaman = Integer.parseInt(strName);
+            }
+        });
+        buiderTenorPinjaman.show();
+    }
+
+    @OnClick(R.id.et_tenor_bunga_fix)
+    public void setTenorBungaFix(){
+        AlertDialog.Builder builderBungaFix = new AlertDialog.Builder(this);
+        builderBungaFix.setTitle(getString(R.string.pilih_salah_satu));
+
+        final ArrayAdapter<String> arrayBungaFix = new ArrayAdapter<String>(this, android.R.layout.select_dialog_singlechoice);
         for(i=36; i<=48; i++){
-            listTenorBungaFix.add(""+i);
+            arrayBungaFix.add(""+i);
         }
-        ArrayAdapter<String> dataTenorBungaFix = new ArrayAdapter<>(getApplicationContext(),
-                android.R.layout.simple_spinner_item, listTenorBungaFix);
-        dataTenorBungaFix.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinTenorBungaFix.setAdapter(dataTenorBungaFix);
-        dataTenorBungaFix.notifyDataSetChanged();
 
-        spinTenorBungaFix.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        builderBungaFix.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if(i>0){
-                    tenorBungaFix = Integer.parseInt(adapterView.getItemAtPosition(i).toString());
-                }
-                else if(i==0){
-                    tenorBungaFix = 0;
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
             }
         });
 
-        listBungaFloating.add("--");
+        builderBungaFix.setAdapter(arrayBungaFix, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String strName = arrayBungaFix.getItem(which);
+                etTenorBungaFix.setText(strName);
+                tenorBungaFix = Integer.parseInt(strName);
+            }
+        });
+        builderBungaFix.show();
+    }
+
+    @OnClick(R.id.et_bunga_floating)
+    public void setBungaFloating(){
+        AlertDialog.Builder builderBungaFloating = new AlertDialog.Builder(this);
+        builderBungaFloating.setTitle(getString(R.string.pilih_salah_satu));
+
+        final ArrayAdapter<String> arrayBungaFloating = new ArrayAdapter<String>(this, android.R.layout.select_dialog_singlechoice);
         for(i=1; i<=5; i++){
-            listBungaFloating.add(""+i);
+            arrayBungaFloating.add(""+i);
         }
-        ArrayAdapter<String> dataBungaFloating = new ArrayAdapter<>(getApplicationContext(),
-                android.R.layout.simple_spinner_item, listBungaFloating);
-        dataBungaFloating.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinBungaFloatingPerTahun.setAdapter(dataBungaFloating);
-        dataBungaFloating.notifyDataSetChanged();
 
-        spinBungaFloatingPerTahun.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        builderBungaFloating.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if(i>0){
-                    bungaFloatingPerTahun = Integer.parseInt(adapterView.getItemAtPosition(i).toString());
-                }
-                else if(i==0){
-                    bungaFloatingPerTahun = 0;
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
             }
         });
+
+        builderBungaFloating.setAdapter(arrayBungaFloating, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String strName = arrayBungaFloating.getItem(which);
+                etBungaFloating.setText(strName);
+                bungaFloatingPerTahun = Integer.parseInt(strName);
+            }
+        });
+        builderBungaFloating.show();
     }
 
     @OnClick(R.id.btn_hitung)

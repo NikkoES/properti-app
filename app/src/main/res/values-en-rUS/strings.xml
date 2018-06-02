@@ -47,6 +47,9 @@
     <string name="hapus">Delete</string>
     <string name="ubah">Edit</string>
 
+    <string name="pilih_salah_satu">Choose one :</string>
+    <string name="tekan_tombol">Press the add button below to start calculate</string>
+
     <!--dialog-->
     <string name="berhasil_disimpan">Data has been saved</string>
     <string name="gagal_disimpan">Data cannot be saved !</string>

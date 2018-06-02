@@ -51,6 +51,7 @@ public class CicilanFragment extends Fragment {
     private FloatingActionButton fab;
     EditText etKeterangan;
     TextView txtJudul;
+    TextView tekanTombol;
 
     private RecyclerView rvHome;
     private CicilanAdapter adapter;
@@ -101,6 +102,7 @@ public class CicilanFragment extends Fragment {
         }
 
         rvHome = (RecyclerView) view.findViewById(R.id.rv_cicilan);
+        tekanTombol = (TextView) view.findViewById(R.id.tekan_untuk_memulai);
 
         adapter = new CicilanAdapter(getContext(), cicilanList);
 
@@ -174,6 +176,15 @@ public class CicilanFragment extends Fragment {
                     loading.dismiss();
 
                     cicilanList = response.body().getData();
+
+                    if(cicilanList.size()==0){
+                        tekanTombol.setVisibility(View.VISIBLE);
+                        rvHome.setVisibility(View.GONE);
+                    }
+                    else{
+                        tekanTombol.setVisibility(View.GONE);
+                        rvHome.setVisibility(View.VISIBLE);
+                    }
 
                     rvHome.setAdapter(new CicilanAdapter(getContext(), cicilanList));
                     adapter.notifyDataSetChanged();

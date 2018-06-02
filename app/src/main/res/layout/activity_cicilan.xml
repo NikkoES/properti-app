@@ -40,62 +40,61 @@
 
                     </android.support.design.widget.TextInputLayout>
 
-                    <TextView
+                    <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/bunga_per_tahun"
-                        android:textColor="@color/colorAccent"
-                        android:textSize="12sp"
-                        />
+                        android:layout_height="wrap_content">
 
-                    <Spinner
-                        android:id="@+id/spin_bunga_per_tahun"
-                        android:layout_width="match_parent"
-                        android:layout_height="36dp"
-                        android:gravity="center"/>
+                        <EditText
+                            android:id="@+id/et_bunga_per_tahun"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:hint="@string/bunga_per_tahun"
+                            android:focusable="false"/>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/tenor_lama_pinjaman"
-                        android:textColor="@color/colorAccent"
-                        android:textSize="12sp"
-                        />
+                    </android.support.design.widget.TextInputLayout>
 
-                    <Spinner
-                        android:id="@+id/spin_tenor_peminjaman"
+                    <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
-                        android:layout_height="36dp"
-                        android:gravity="center"/>
+                        android:layout_height="wrap_content">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/tenor_bunga_fix"
-                        android:textColor="@color/colorAccent"
-                        android:textSize="12sp"
-                        />
+                        <EditText
+                            android:id="@+id/et_lama_pinjaman"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:hint="@string/tenor_lama_pinjaman"
+                            android:focusable="false"/>
 
-                    <Spinner
-                        android:id="@+id/spin_tenor_bunga_fix"
-                        android:layout_width="match_parent"
-                        android:layout_height="36dp"
-                        android:gravity="center"/>
+                    </android.support.design.widget.TextInputLayout>
 
-                    <TextView
+                    <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/bunga_floating"
-                        android:textColor="@color/colorAccent"
-                        android:textSize="12sp"
-                        />
+                        android:layout_height="wrap_content">
 
-                    <Spinner
-                        android:id="@+id/spin_bunga_floating_per_tahun"
+                        <EditText
+                            android:id="@+id/et_tenor_bunga_fix"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:hint="@string/tenor_bunga_fix"
+                            android:focusable="false"/>
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
-                        android:layout_height="36dp"
-                        android:gravity="center"/>
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/et_bunga_floating"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:hint="@string/bunga_floating"
+                            android:focusable="false"/>
+
+                    </android.support.design.widget.TextInputLayout>
 
                 </LinearLayout>
 

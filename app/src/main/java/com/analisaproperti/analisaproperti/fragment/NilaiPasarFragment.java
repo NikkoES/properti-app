@@ -51,6 +51,7 @@ public class NilaiPasarFragment extends Fragment {
     private FloatingActionButton fab;
     EditText etKeterangan;
     TextView txtJudul;
+    TextView tekanTombol;
 
     private RecyclerView rvHome;
     private NilaiPasarAdapter adapter;
@@ -102,6 +103,7 @@ public class NilaiPasarFragment extends Fragment {
         }
 
         rvHome = (RecyclerView) view.findViewById(R.id.rv_nilai_pasar);
+        tekanTombol = (TextView) view.findViewById(R.id.tekan_untuk_memulai);
 
         adapter = new NilaiPasarAdapter(getContext(), nilaiPasarList);
 
@@ -169,6 +171,15 @@ public class NilaiPasarFragment extends Fragment {
                     loading.dismiss();
 
                     nilaiPasarList = response.body().getData();
+
+                    if(nilaiPasarList.size()==0){
+                        tekanTombol.setVisibility(View.VISIBLE);
+                        rvHome.setVisibility(View.GONE);
+                    }
+                    else{
+                        tekanTombol.setVisibility(View.GONE);
+                        rvHome.setVisibility(View.VISIBLE);
+                    }
 
                     rvHome.setAdapter(new NilaiPasarAdapter(getContext(), nilaiPasarList));
                     adapter.notifyDataSetChanged();
