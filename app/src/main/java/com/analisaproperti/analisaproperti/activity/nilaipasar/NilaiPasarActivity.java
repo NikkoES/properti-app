@@ -27,7 +27,6 @@ import com.analisaproperti.analisaproperti.utils.SharedPreferencesUtils;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -233,50 +232,99 @@ public class NilaiPasarActivity extends AppCompatActivity {
                 catatanSurvey = propertiNilaiPasar.get("catatan_survey_lokasi").toString();
 
                 position = getIntent().getIntExtra("position", 0);
+                listAngkaNilaiPasar = (ArrayList<PropertiNilaiPasar>)getIntent().getSerializableExtra("properti");
 
-                JSONArray properti = propertiNilaiPasar.getJSONArray("properti");
+                PropertiNilaiPasar properti;
 
-                JSONObject dataProperti = properti.getJSONObject(0);
-                hargaJualProperty = Long.parseLong(dataProperti.get("harga_jual_properti").toString());
-                luasTanah = Long.parseLong(dataProperti.get("luas_tanah").toString());
-                luasBangunan = Long.parseLong(dataProperti.get("luas_bangunan").toString());
-                usiaBangunan = Long.parseLong(dataProperti.get("usia_bangunan").toString());
-                hargaRataBangunanPerMeter = Long.parseLong(dataProperti.get("harga_rata_per_meter").toString());
+                properti = listAngkaNilaiPasar.get(0);
+                hargaJualProperty = Long.parseLong(properti.getHargaJualProperti());
+                luasTanah = Long.parseLong(properti.getLuasTanah());
+                luasBangunan = Long.parseLong(properti.getLuasBangunan());
+                usiaBangunan = Long.parseLong(properti.getUsiaBangunan());
+                hargaRataBangunanPerMeter = Long.parseLong(properti.getHargaRataPerMeter());
 
-                JSONObject dataProperti1 = properti.getJSONObject(1);
-                hargaJualProperty1 = Long.parseLong(dataProperti1.get("harga_jual_properti").toString());
-                luasTanah1 = Long.parseLong(dataProperti1.get("luas_tanah").toString());
-                luasBangunan1 = Long.parseLong(dataProperti1.get("luas_bangunan").toString());
-                usiaBangunan1 = Long.parseLong(dataProperti1.get("usia_bangunan").toString());
-                hargaRataBangunanPerMeter1 = Long.parseLong(dataProperti1.get("harga_rata_per_meter").toString());
+                properti = listAngkaNilaiPasar.get(1);
+                hargaJualProperty1 = Long.parseLong(properti.getHargaJualProperti());
+                luasTanah1 = Long.parseLong(properti.getLuasTanah());
+                luasBangunan1 = Long.parseLong(properti.getLuasBangunan());
+                usiaBangunan1 = Long.parseLong(properti.getUsiaBangunan());
+                hargaRataBangunanPerMeter1 = Long.parseLong(properti.getHargaRataPerMeter());
 
-                JSONObject dataProperti2 = properti.getJSONObject(2);
-                hargaJualProperty2 = Long.parseLong(dataProperti2.get("harga_jual_properti").toString());
-                luasTanah2 = Long.parseLong(dataProperti2.get("luas_tanah").toString());
-                luasBangunan2 = Long.parseLong(dataProperti2.get("luas_bangunan").toString());
-                usiaBangunan2 = Long.parseLong(dataProperti2.get("usia_bangunan").toString());
-                hargaRataBangunanPerMeter2 = Long.parseLong(dataProperti2.get("harga_rata_per_meter").toString());
+                if(listAngkaNilaiPasar.size()==3){
+                    properti = listAngkaNilaiPasar.get(2);
+                    hargaJualProperty2 = Long.parseLong(properti.getHargaJualProperti());
+                    luasTanah2 = Long.parseLong(properti.getLuasTanah());
+                    luasBangunan2 = Long.parseLong(properti.getLuasBangunan());
+                    usiaBangunan2 = Long.parseLong(properti.getUsiaBangunan());
+                    hargaRataBangunanPerMeter2 = Long.parseLong(properti.getHargaRataPerMeter());
+                }
+                else if(listAngkaNilaiPasar.size()==4){
+                    properti = listAngkaNilaiPasar.get(3);
+                    hargaJualProperty3 = Long.parseLong(properti.getHargaJualProperti());
+                    luasTanah3 = Long.parseLong(properti.getLuasTanah());
+                    luasBangunan3 = Long.parseLong(properti.getLuasBangunan());
+                    usiaBangunan3 = Long.parseLong(properti.getUsiaBangunan());
+                    hargaRataBangunanPerMeter3 = Long.parseLong(properti.getHargaRataPerMeter());
+                }
+                else if(listAngkaNilaiPasar.size()==5) {
+                    properti = listAngkaNilaiPasar.get(4);
+                    hargaJualProperty4 = Long.parseLong(properti.getHargaJualProperti());
+                    luasTanah4 = Long.parseLong(properti.getLuasTanah());
+                    luasBangunan4 = Long.parseLong(properti.getLuasBangunan());
+                    usiaBangunan4 = Long.parseLong(properti.getUsiaBangunan());
+                    hargaRataBangunanPerMeter4 = Long.parseLong(properti.getHargaRataPerMeter());
+                }
+                else if(listAngkaNilaiPasar.size()==6){
+                    properti = listAngkaNilaiPasar.get(5);
+                    hargaJualProperty5 = Long.parseLong(properti.getHargaJualProperti());
+                    luasTanah5 = Long.parseLong(properti.getLuasTanah());
+                    luasBangunan5 = Long.parseLong(properti.getLuasBangunan());
+                    usiaBangunan5 = Long.parseLong(properti.getUsiaBangunan());
+                    hargaRataBangunanPerMeter5 = Long.parseLong(properti.getHargaRataPerMeter());
+                }
 
-                JSONObject dataProperti3 = properti.getJSONObject(3);
-                hargaJualProperty3 = Long.parseLong(dataProperti3.get("harga_jual_properti").toString());
-                luasTanah3 = Long.parseLong(dataProperti3.get("luas_tanah").toString());
-                luasBangunan3 = Long.parseLong(dataProperti3.get("luas_bangunan").toString());
-                usiaBangunan3 = Long.parseLong(dataProperti3.get("usia_bangunan").toString());
-                hargaRataBangunanPerMeter3 = Long.parseLong(dataProperti3.get("harga_rata_per_meter").toString());
+//                JSONArray properti = propertiNilaiPasar.getJSONArray("properti");
 
-                JSONObject dataProperti4 = properti.getJSONObject(4);
-                hargaJualProperty4 = Long.parseLong(dataProperti4.get("harga_jual_properti").toString());
-                luasTanah4 = Long.parseLong(dataProperti4.get("luas_tanah").toString());
-                luasBangunan4 = Long.parseLong(dataProperti4.get("luas_bangunan").toString());
-                usiaBangunan4 = Long.parseLong(dataProperti4.get("usia_bangunan").toString());
-                hargaRataBangunanPerMeter4 = Long.parseLong(dataProperti4.get("harga_rata_per_meter").toString());
-
-                JSONObject dataProperti5 = properti.getJSONObject(5);
-                hargaJualProperty5 = Long.parseLong(dataProperti5.get("harga_jual_properti").toString());
-                luasTanah5 = Long.parseLong(dataProperti5.get("luas_tanah").toString());
-                luasBangunan5 = Long.parseLong(dataProperti5.get("luas_bangunan").toString());
-                usiaBangunan5 = Long.parseLong(dataProperti5.get("usia_bangunan").toString());
-                hargaRataBangunanPerMeter5 = Long.parseLong(dataProperti5.get("harga_rata_per_meter").toString());
+//                JSONObject dataProperti = properti.getJSONObject(0);
+//                hargaJualProperty = Long.parseLong(dataProperti.get("harga_jual_properti").toString());
+//                luasTanah = Long.parseLong(dataProperti.get("luas_tanah").toString());
+//                luasBangunan = Long.parseLong(dataProperti.get("luas_bangunan").toString());
+//                usiaBangunan = Long.parseLong(dataProperti.get("usia_bangunan").toString());
+//                hargaRataBangunanPerMeter = Long.parseLong(dataProperti.get("harga_rata_per_meter").toString());
+//                JSONObject dataProperti1 = properti.getJSONObject(1);
+//                hargaJualProperty1 = Long.parseLong(dataProperti1.get("harga_jual_properti").toString());
+//                luasTanah1 = Long.parseLong(dataProperti1.get("luas_tanah").toString());
+//                luasBangunan1 = Long.parseLong(dataProperti1.get("luas_bangunan").toString());
+//                usiaBangunan1 = Long.parseLong(dataProperti1.get("usia_bangunan").toString());
+//                hargaRataBangunanPerMeter1 = Long.parseLong(dataProperti1.get("harga_rata_per_meter").toString());
+//
+//                JSONObject dataProperti2 = properti.getJSONObject(2);
+//                hargaJualProperty2 = Long.parseLong(dataProperti2.get("harga_jual_properti").toString());
+//                luasTanah2 = Long.parseLong(dataProperti2.get("luas_tanah").toString());
+//                luasBangunan2 = Long.parseLong(dataProperti2.get("luas_bangunan").toString());
+//                usiaBangunan2 = Long.parseLong(dataProperti2.get("usia_bangunan").toString());
+//                hargaRataBangunanPerMeter2 = Long.parseLong(dataProperti2.get("harga_rata_per_meter").toString());
+//
+//                JSONObject dataProperti3 = properti.getJSONObject(3);
+//                hargaJualProperty3 = Long.parseLong(dataProperti3.get("harga_jual_properti").toString());
+//                luasTanah3 = Long.parseLong(dataProperti3.get("luas_tanah").toString());
+//                luasBangunan3 = Long.parseLong(dataProperti3.get("luas_bangunan").toString());
+//                usiaBangunan3 = Long.parseLong(dataProperti3.get("usia_bangunan").toString());
+//                hargaRataBangunanPerMeter3 = Long.parseLong(dataProperti3.get("harga_rata_per_meter").toString());
+//
+//                JSONObject dataProperti4 = properti.getJSONObject(4);
+//                hargaJualProperty4 = Long.parseLong(dataProperti4.get("harga_jual_properti").toString());
+//                luasTanah4 = Long.parseLong(dataProperti4.get("luas_tanah").toString());
+//                luasBangunan4 = Long.parseLong(dataProperti4.get("luas_bangunan").toString());
+//                usiaBangunan4 = Long.parseLong(dataProperti4.get("usia_bangunan").toString());
+//                hargaRataBangunanPerMeter4 = Long.parseLong(dataProperti4.get("harga_rata_per_meter").toString());
+//
+//                JSONObject dataProperti5 = properti.getJSONObject(5);
+//                hargaJualProperty5 = Long.parseLong(dataProperti5.get("harga_jual_properti").toString());
+//                luasTanah5 = Long.parseLong(dataProperti5.get("luas_tanah").toString());
+//                luasBangunan5 = Long.parseLong(dataProperti5.get("luas_bangunan").toString());
+//                usiaBangunan5 = Long.parseLong(dataProperti5.get("usia_bangunan").toString());
+//                hargaRataBangunanPerMeter5 = Long.parseLong(dataProperti5.get("harga_rata_per_meter").toString());
 
                 etCatatanKondisiBangunan.setText(catatanKondisi);
                 etCatatanSurveyLokasi.setText(catatanSurvey);
@@ -328,9 +376,9 @@ public class NilaiPasarActivity extends AppCompatActivity {
             position = 999;
         }
 
-        for(int i=0;i<=5;i++){
-            listAngkaNilaiPasar.add(new PropertiNilaiPasar(idNilaiPasar,""+(i+1),"0","0","0","0","0","0", "", ""));
-        }
+//        for(int i=0;i<=5;i++){
+//            listAngkaNilaiPasar.add(new PropertiNilaiPasar(idNilaiPasar,""+(i+1),"0","0","0","0","0","0", "", ""));
+//        }
 
         btnBack.setVisibility(View.INVISIBLE);
         btnReview.setVisibility(View.INVISIBLE);
@@ -373,6 +421,7 @@ public class NilaiPasarActivity extends AppCompatActivity {
             btnReview.setVisibility(View.INVISIBLE);
             btnNext.setVisibility(View.VISIBLE);
             layoutCatatan.setVisibility(View.VISIBLE);
+            etHargaJualProperty.setFocusable(true);
         }
         else if(i==R.id.rb_properti_satu){
             properti = 1;
@@ -388,6 +437,7 @@ public class NilaiPasarActivity extends AppCompatActivity {
             btnReview.setVisibility(View.VISIBLE);
             btnNext.setVisibility(View.VISIBLE);
             layoutCatatan.setVisibility(View.GONE);
+            etHargaJualPropertySatu.setFocusable(true);
         }
         else if(i==R.id.rb_properti_dua){
             properti = 2;
@@ -403,6 +453,7 @@ public class NilaiPasarActivity extends AppCompatActivity {
             btnReview.setVisibility(View.VISIBLE);
             btnNext.setVisibility(View.VISIBLE);
             layoutCatatan.setVisibility(View.GONE);
+            etHargaJualPropertyDua.setFocusable(true);
         }
         else if(i==R.id.rb_properti_tiga){
             properti = 3;
@@ -418,6 +469,7 @@ public class NilaiPasarActivity extends AppCompatActivity {
             btnReview.setVisibility(View.VISIBLE);
             btnNext.setVisibility(View.VISIBLE);
             layoutCatatan.setVisibility(View.GONE);
+            etHargaJualPropertyTiga.setFocusable(true);
         }
         else if(i==R.id.rb_properti_empat){
             properti = 4;
@@ -433,6 +485,7 @@ public class NilaiPasarActivity extends AppCompatActivity {
             btnReview.setVisibility(View.VISIBLE);
             btnNext.setVisibility(View.VISIBLE);
             layoutCatatan.setVisibility(View.GONE);
+            etHargaJualPropertyEmpat.setFocusable(true);
         }
         else if(i==R.id.rb_properti_lima) {
             properti = 5;
@@ -448,6 +501,7 @@ public class NilaiPasarActivity extends AppCompatActivity {
             btnBack.setVisibility(View.VISIBLE);
             btnReview.setVisibility(View.VISIBLE);
             layoutCatatan.setVisibility(View.GONE);
+            etHargaJualPropertyLima.setFocusable(true);
         }
     }
 
@@ -492,7 +546,7 @@ public class NilaiPasarActivity extends AppCompatActivity {
 
     public void checkValue(){
         if(etHargaJualPropertyDua.getText().toString().equalsIgnoreCase("0") || TextUtils.isEmpty(etHargaJualPropertyDua.getText().toString()) || TextUtils.isEmpty(etLuasTanahDua.getText().toString()) || TextUtils.isEmpty(etLuasBangunanDua.getText().toString()) || TextUtils.isEmpty(etUsiaBangunanDua.getText().toString()) || TextUtils.isEmpty(etHargaRataBangunanPerMeterDua.getText().toString())){
-            listAngkaNilaiPasar.set(2, new PropertiNilaiPasar(idNilaiPasar,"3",""+0,""+0,""+0,""+0,""+0,""+0,""+0, ""+0));
+//            listAngkaNilaiPasar.set(2, new PropertiNilaiPasar(idNilaiPasar,"3",""+0,""+0,""+0,""+0,""+0,""+0,""+0, ""+0));
             count--;
         }
         else{
@@ -513,10 +567,10 @@ public class NilaiPasarActivity extends AppCompatActivity {
                 hargaTanahPerMeter2 = (hargaJualProperty2 - hargaBangunanSaatIni2) / luasTanah2;
             }
             count++;
-            listAngkaNilaiPasar.set(2, new PropertiNilaiPasar(idNilaiPasar,"3", ""+hargaJualProperty2, ""+luasTanah2, ""+luasBangunan2, ""+usiaBangunan2, ""+hargaRataBangunanPerMeter2, ""+hargaBangunanBaru2, ""+hargaBangunanSaatIni2, ""+hargaTanahPerMeter2));
+            listAngkaNilaiPasar.add(new PropertiNilaiPasar(idNilaiPasar,"3", ""+hargaJualProperty2, ""+luasTanah2, ""+luasBangunan2, ""+usiaBangunan2, ""+hargaRataBangunanPerMeter2, ""+hargaBangunanBaru2, ""+hargaBangunanSaatIni2, ""+hargaTanahPerMeter2));
         }
         if(etHargaJualPropertyTiga.getText().toString().equalsIgnoreCase("0") || TextUtils.isEmpty(etHargaJualPropertyTiga.getText().toString()) || TextUtils.isEmpty(etLuasTanahTiga.getText().toString()) || TextUtils.isEmpty(etLuasBangunanTiga.getText().toString()) || TextUtils.isEmpty(etUsiaBangunanTiga.getText().toString()) || TextUtils.isEmpty(etHargaRataBangunanPerMeterTiga.getText().toString())){
-            listAngkaNilaiPasar.set(3, new PropertiNilaiPasar(idNilaiPasar,"4",""+0,""+0,""+0,""+0,""+0,""+0,""+0, ""+0));
+//            listAngkaNilaiPasar.set(3, new PropertiNilaiPasar(idNilaiPasar,"4",""+0,""+0,""+0,""+0,""+0,""+0,""+0, ""+0));
             count--;
         }
         else{
@@ -537,10 +591,10 @@ public class NilaiPasarActivity extends AppCompatActivity {
                 hargaTanahPerMeter3 = (hargaJualProperty3 - hargaBangunanSaatIni3) / luasTanah3;
             }
             count++;
-            listAngkaNilaiPasar.set(3, new PropertiNilaiPasar(idNilaiPasar,"4", ""+hargaJualProperty3, ""+luasTanah3, ""+luasBangunan3, ""+usiaBangunan3, ""+hargaRataBangunanPerMeter3, ""+hargaBangunanBaru3, ""+hargaBangunanSaatIni3, ""+hargaTanahPerMeter3));
+            listAngkaNilaiPasar.add(new PropertiNilaiPasar(idNilaiPasar,"4", ""+hargaJualProperty3, ""+luasTanah3, ""+luasBangunan3, ""+usiaBangunan3, ""+hargaRataBangunanPerMeter3, ""+hargaBangunanBaru3, ""+hargaBangunanSaatIni3, ""+hargaTanahPerMeter3));
         }
         if(etHargaJualPropertyEmpat.getText().toString().equalsIgnoreCase("0") || TextUtils.isEmpty(etHargaJualPropertyEmpat.getText().toString()) || TextUtils.isEmpty(etLuasTanahEmpat.getText().toString()) || TextUtils.isEmpty(etLuasBangunanEmpat.getText().toString()) || TextUtils.isEmpty(etUsiaBangunanEmpat.getText().toString()) || TextUtils.isEmpty(etHargaRataBangunanPerMeterEmpat.getText().toString())){
-            listAngkaNilaiPasar.set(4, new PropertiNilaiPasar(idNilaiPasar,"5",""+0,""+0,""+0,""+0,""+0,""+0,""+0, ""+0));
+//            listAngkaNilaiPasar.set(4, new PropertiNilaiPasar(idNilaiPasar,"5",""+0,""+0,""+0,""+0,""+0,""+0,""+0, ""+0));
             count--;
         }
         else{
@@ -561,10 +615,10 @@ public class NilaiPasarActivity extends AppCompatActivity {
                 hargaTanahPerMeter4 = (hargaJualProperty4 - hargaBangunanSaatIni4) / luasTanah4;
             }
             count++;
-            listAngkaNilaiPasar.set(4, new PropertiNilaiPasar(idNilaiPasar,"5", ""+hargaJualProperty4, ""+luasTanah4, ""+luasBangunan4, ""+usiaBangunan4, ""+hargaRataBangunanPerMeter4, ""+hargaBangunanBaru4, ""+hargaBangunanSaatIni4, ""+hargaTanahPerMeter4));
+            listAngkaNilaiPasar.add(new PropertiNilaiPasar(idNilaiPasar,"5", ""+hargaJualProperty4, ""+luasTanah4, ""+luasBangunan4, ""+usiaBangunan4, ""+hargaRataBangunanPerMeter4, ""+hargaBangunanBaru4, ""+hargaBangunanSaatIni4, ""+hargaTanahPerMeter4));
         }
         if(etHargaJualPropertyLima.getText().toString().equalsIgnoreCase("0") || TextUtils.isEmpty(etHargaJualPropertyLima.getText().toString()) || TextUtils.isEmpty(etLuasTanahLima.getText().toString()) || TextUtils.isEmpty(etLuasBangunanLima.getText().toString()) || TextUtils.isEmpty(etUsiaBangunanLima.getText().toString()) || TextUtils.isEmpty(etHargaRataBangunanPerMeterLima.getText().toString())){
-            listAngkaNilaiPasar.set(5, new PropertiNilaiPasar(idNilaiPasar,"6",""+0,""+0,""+0,""+0,""+0,""+0,""+0, ""+0));
+//            listAngkaNilaiPasar.set(5, new PropertiNilaiPasar(idNilaiPasar,"6",""+0,""+0,""+0,""+0,""+0,""+0,""+0, ""+0));
             count--;
         }
         else{
@@ -585,7 +639,7 @@ public class NilaiPasarActivity extends AppCompatActivity {
                 hargaTanahPerMeter5 = (hargaJualProperty5 - hargaBangunanSaatIni5) / luasTanah5;
             }
             count++;
-            listAngkaNilaiPasar.set(5, new PropertiNilaiPasar(""+idNilaiPasar,"6", ""+hargaJualProperty5, ""+luasTanah5, ""+luasBangunan5, ""+usiaBangunan5, ""+hargaRataBangunanPerMeter5, ""+hargaBangunanBaru5, ""+hargaBangunanSaatIni5, ""+hargaTanahPerMeter5));
+            listAngkaNilaiPasar.add(new PropertiNilaiPasar(""+idNilaiPasar,"6", ""+hargaJualProperty5, ""+luasTanah5, ""+luasBangunan5, ""+usiaBangunan5, ""+hargaRataBangunanPerMeter5, ""+hargaBangunanBaru5, ""+hargaBangunanSaatIni5, ""+hargaTanahPerMeter5));
         }
     }
 
@@ -621,7 +675,7 @@ public class NilaiPasarActivity extends AppCompatActivity {
             else{
                 hargaTanahPerMeter = (hargaJualProperty - hargaBangunanSaatIni) / luasTanah;
             }
-            listAngkaNilaiPasar.set(0, new PropertiNilaiPasar(idNilaiPasar, "1", ""+hargaJualProperty, ""+luasTanah, ""+luasBangunan, ""+usiaBangunan, ""+hargaRataBangunanPerMeter, ""+hargaBangunanBaru, ""+hargaBangunanSaatIni, ""+hargaTanahPerMeter));
+            listAngkaNilaiPasar.add(new PropertiNilaiPasar(idNilaiPasar, "1", ""+hargaJualProperty, ""+luasTanah, ""+luasBangunan, ""+usiaBangunan, ""+hargaRataBangunanPerMeter, ""+hargaBangunanBaru, ""+hargaBangunanSaatIni, ""+hargaTanahPerMeter));
 
             //properti satu
             String sHargaJualProperti1 = (etHargaJualPropertySatu.getText().toString()).replace(".", "");
@@ -640,7 +694,7 @@ public class NilaiPasarActivity extends AppCompatActivity {
             else{
                 hargaTanahPerMeter1 = (hargaJualProperty1 - hargaBangunanSaatIni1) / luasTanah1;
             }
-            listAngkaNilaiPasar.set(1, new PropertiNilaiPasar(idNilaiPasar, "2", ""+hargaJualProperty1, ""+luasTanah1, ""+luasBangunan1, ""+usiaBangunan1, ""+hargaRataBangunanPerMeter1, ""+hargaBangunanBaru1, ""+hargaBangunanSaatIni1, ""+hargaTanahPerMeter1));
+            listAngkaNilaiPasar.add(new PropertiNilaiPasar(idNilaiPasar, "2", ""+hargaJualProperty1, ""+luasTanah1, ""+luasBangunan1, ""+usiaBangunan1, ""+hargaRataBangunanPerMeter1, ""+hargaBangunanBaru1, ""+hargaBangunanSaatIni1, ""+hargaTanahPerMeter1));
 
             checkValue();
 

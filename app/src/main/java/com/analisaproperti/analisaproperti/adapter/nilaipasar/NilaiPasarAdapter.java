@@ -131,6 +131,10 @@ public class NilaiPasarAdapter extends RecyclerView.Adapter<NilaiPasarAdapter.Vi
                                 Intent i = new Intent(context, DetailNilaiPasarActivity.class);
                                 i.putExtra("position", position);
                                 i.putExtra("properti", (ArrayList<PropertiNilaiPasar>) listProperti);
+                                i.putExtra("harga_pasaran", hargaPasaran);
+                                i.putExtra("perbandingan_properti", perbandinganProperti);
+                                i.putExtra("catatan_kondisi", catatanKondisi);
+                                i.putExtra("catatan_survey", catatanSurvey);
                                 i.putExtra("propertiNilaiPasar", nilaiPasar.toString());
                                 context.startActivity(i);
                                 break;
@@ -138,6 +142,7 @@ public class NilaiPasarAdapter extends RecyclerView.Adapter<NilaiPasarAdapter.Vi
                             case 1 : {
                                 Intent i = new Intent(context, NilaiPasarActivity.class);
                                 i.putExtra("position", position);
+                                i.putExtra("properti", (ArrayList<PropertiNilaiPasar>) listProperti);
                                 i.putExtra("propertiNilaiPasar", nilaiPasar.toString());
                                 context.startActivity(i);
                                 break;

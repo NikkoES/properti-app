@@ -117,7 +117,7 @@ public class ReviewNilaiPasarActivity extends AppCompatActivity {
         int sizeInDp = (int) (size * getResources().getDisplayMetrics().density + 0.5f);
 
         //row table
-        for(int a=0; a<=5; a++){
+        for(int a=0; a<listAngkaNilaiPasar.size(); a++){
             TextView txtHargaJualProperti = new TextView(this);
             TextView txtLuasTanah = new TextView(this);
             TextView txtLuasBangunan = new TextView(this);

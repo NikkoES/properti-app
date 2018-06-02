@@ -153,6 +153,19 @@
                                     android:textStyle="bold" />
                             </TableRow>
 
+                            <TableRow
+                                android:id="@+id/row_harga_rata_rata"
+                                android:background="@drawable/table_row_last_bg"
+                                android:padding="5dp">
+
+                                <TextView
+                                    android:background="@drawable/table_cell_bg"
+                                    android:padding="8dp"
+                                    android:text="@string/harga_rata"
+                                    android:textColor="@color/colorAccent"
+                                    android:textStyle="bold" />
+                            </TableRow>
+
                         </TableLayout>
 
                         <TableLayout

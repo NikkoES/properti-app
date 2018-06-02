@@ -98,6 +98,10 @@ public interface BaseApiService {
                                       @Field("harga_tanah_per_meter") String hargaTanahPerMeter);
 
     @FormUrlEncoded
+    @POST("nilaipasar/properti/")
+    Call<ResponsePost> savePropertiDefault(@Field("id_nilai_pasar") String idNilaiPasar, @Field("id_properti") String idProperti);
+
+    @FormUrlEncoded
     @PUT("nilaipasar/data/{id_nilai_pasar}")
     Call<ResponsePost> updateNilaiPasar(@Path("id_nilai_pasar") String idNilaiPasar,
                                       @Field("keterangan") String keterangan,
