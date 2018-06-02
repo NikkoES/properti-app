@@ -159,6 +159,8 @@ public class CashFlowAdapter extends RecyclerView.Adapter<CashFlowAdapter.ViewHo
                         if (response.isSuccessful()){
                             if (response.body().getData().equalsIgnoreCase("1")){
                                 Toast.makeText(context, context.getString(R.string.berhasil_dihapus), Toast.LENGTH_SHORT).show();
+                                listCashFlow.remove(position);
+                                notifyDataSetChanged();
                             }
                             else {
                                 Toast.makeText(context, context.getString(R.string.gagal_dihapus), Toast.LENGTH_SHORT).show();

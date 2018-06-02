@@ -213,7 +213,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         Auth.GoogleSignInApi.signOut(googleApiClient).setResultCallback(new ResultCallback<Status>() {
                             @Override
                             public void onResult(@NonNull Status status) {
-                                Toast.makeText(MainActivity.this, "Logout Success !", Toast.LENGTH_SHORT).show();
                             }
                         });
                         LoginManager.getInstance().logOut();

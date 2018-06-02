@@ -162,6 +162,8 @@ public class NilaiPasarAdapter extends RecyclerView.Adapter<NilaiPasarAdapter.Vi
                         if (response.isSuccessful()){
                             if (response.body().getData().equalsIgnoreCase("1")){
                                 Toast.makeText(context, context.getString(R.string.berhasil_dihapus), Toast.LENGTH_SHORT).show();
+                                listNilaiPasar.remove(position);
+                                notifyDataSetChanged();
                             }
                             else {
                                 Toast.makeText(context, context.getString(R.string.gagal_dihapus), Toast.LENGTH_SHORT).show();
