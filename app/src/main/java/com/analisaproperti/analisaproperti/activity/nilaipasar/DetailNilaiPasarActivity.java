@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import com.analisaproperti.analisaproperti.R;
 import com.analisaproperti.analisaproperti.model.nilaipasar.PropertiNilaiPasar;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -48,6 +50,11 @@ public class DetailNilaiPasarActivity extends AppCompatActivity {
     @BindView(R.id.txt_catatan_survey)
     TextView txtCatatanSurvey;
 
+    @BindView(R.id.ad_top)
+    AdView topAds;
+    @BindView(R.id.ad_bottom)
+    AdView bottomAds;
+
     List<PropertiNilaiPasar> listAngkaNilaiPasar = new ArrayList<>();
 
     String hargaPasaran, perbandinganProperti, catatanKondisi, catatannSurvey;
@@ -61,9 +68,14 @@ public class DetailNilaiPasarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail_nilai_pasar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(getResources().getString(R.string.nav_nilai_pasar));
+        getSupportActionBar().setTitle("Detail "+getResources().getString(R.string.detail_nilai_pasar));
 
         ButterKnife.bind(this);
+
+        AdRequest adRequest = new AdRequest.Builder()
+                .build();
+        topAds.loadAd(adRequest);
+        bottomAds.loadAd(adRequest);
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 

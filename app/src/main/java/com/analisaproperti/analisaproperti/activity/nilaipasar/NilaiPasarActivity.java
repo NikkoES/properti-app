@@ -376,9 +376,9 @@ public class NilaiPasarActivity extends AppCompatActivity {
             position = 999;
         }
 
-//        for(int i=0;i<=5;i++){
-//            listAngkaNilaiPasar.add(new PropertiNilaiPasar(idNilaiPasar,""+(i+1),"0","0","0","0","0","0", "", ""));
-//        }
+        for(int i=0;i<=5;i++){
+            listAngkaNilaiPasar.add(new PropertiNilaiPasar(idNilaiPasar,""+(i+1),"0","0","0","0","0","0", "", ""));
+        }
 
         btnBack.setVisibility(View.INVISIBLE);
         btnReview.setVisibility(View.INVISIBLE);
@@ -546,7 +546,7 @@ public class NilaiPasarActivity extends AppCompatActivity {
 
     public void checkValue(){
         if(etHargaJualPropertyDua.getText().toString().equalsIgnoreCase("0") || TextUtils.isEmpty(etHargaJualPropertyDua.getText().toString()) || TextUtils.isEmpty(etLuasTanahDua.getText().toString()) || TextUtils.isEmpty(etLuasBangunanDua.getText().toString()) || TextUtils.isEmpty(etUsiaBangunanDua.getText().toString()) || TextUtils.isEmpty(etHargaRataBangunanPerMeterDua.getText().toString())){
-//            listAngkaNilaiPasar.set(2, new PropertiNilaiPasar(idNilaiPasar,"3",""+0,""+0,""+0,""+0,""+0,""+0,""+0, ""+0));
+            listAngkaNilaiPasar.set(2, new PropertiNilaiPasar(idNilaiPasar,"3",""+0,""+0,""+0,""+0,""+0,""+0,""+0, ""+0));
             count--;
         }
         else{
@@ -567,10 +567,10 @@ public class NilaiPasarActivity extends AppCompatActivity {
                 hargaTanahPerMeter2 = (hargaJualProperty2 - hargaBangunanSaatIni2) / luasTanah2;
             }
             count++;
-            listAngkaNilaiPasar.add(new PropertiNilaiPasar(idNilaiPasar,"3", ""+hargaJualProperty2, ""+luasTanah2, ""+luasBangunan2, ""+usiaBangunan2, ""+hargaRataBangunanPerMeter2, ""+hargaBangunanBaru2, ""+hargaBangunanSaatIni2, ""+hargaTanahPerMeter2));
+            listAngkaNilaiPasar.set(2, new PropertiNilaiPasar(idNilaiPasar,"3", ""+hargaJualProperty2, ""+luasTanah2, ""+luasBangunan2, ""+usiaBangunan2, ""+hargaRataBangunanPerMeter2, ""+hargaBangunanBaru2, ""+hargaBangunanSaatIni2, ""+hargaTanahPerMeter2));
         }
         if(etHargaJualPropertyTiga.getText().toString().equalsIgnoreCase("0") || TextUtils.isEmpty(etHargaJualPropertyTiga.getText().toString()) || TextUtils.isEmpty(etLuasTanahTiga.getText().toString()) || TextUtils.isEmpty(etLuasBangunanTiga.getText().toString()) || TextUtils.isEmpty(etUsiaBangunanTiga.getText().toString()) || TextUtils.isEmpty(etHargaRataBangunanPerMeterTiga.getText().toString())){
-//            listAngkaNilaiPasar.set(3, new PropertiNilaiPasar(idNilaiPasar,"4",""+0,""+0,""+0,""+0,""+0,""+0,""+0, ""+0));
+            listAngkaNilaiPasar.set(3, new PropertiNilaiPasar(idNilaiPasar,"4",""+0,""+0,""+0,""+0,""+0,""+0,""+0, ""+0));
             count--;
         }
         else{
@@ -591,10 +591,10 @@ public class NilaiPasarActivity extends AppCompatActivity {
                 hargaTanahPerMeter3 = (hargaJualProperty3 - hargaBangunanSaatIni3) / luasTanah3;
             }
             count++;
-            listAngkaNilaiPasar.add(new PropertiNilaiPasar(idNilaiPasar,"4", ""+hargaJualProperty3, ""+luasTanah3, ""+luasBangunan3, ""+usiaBangunan3, ""+hargaRataBangunanPerMeter3, ""+hargaBangunanBaru3, ""+hargaBangunanSaatIni3, ""+hargaTanahPerMeter3));
+            listAngkaNilaiPasar.set(3, new PropertiNilaiPasar(idNilaiPasar,"4", ""+hargaJualProperty3, ""+luasTanah3, ""+luasBangunan3, ""+usiaBangunan3, ""+hargaRataBangunanPerMeter3, ""+hargaBangunanBaru3, ""+hargaBangunanSaatIni3, ""+hargaTanahPerMeter3));
         }
         if(etHargaJualPropertyEmpat.getText().toString().equalsIgnoreCase("0") || TextUtils.isEmpty(etHargaJualPropertyEmpat.getText().toString()) || TextUtils.isEmpty(etLuasTanahEmpat.getText().toString()) || TextUtils.isEmpty(etLuasBangunanEmpat.getText().toString()) || TextUtils.isEmpty(etUsiaBangunanEmpat.getText().toString()) || TextUtils.isEmpty(etHargaRataBangunanPerMeterEmpat.getText().toString())){
-//            listAngkaNilaiPasar.set(4, new PropertiNilaiPasar(idNilaiPasar,"5",""+0,""+0,""+0,""+0,""+0,""+0,""+0, ""+0));
+            listAngkaNilaiPasar.set(4, new PropertiNilaiPasar(idNilaiPasar,"5",""+0,""+0,""+0,""+0,""+0,""+0,""+0, ""+0));
             count--;
         }
         else{
@@ -615,10 +615,10 @@ public class NilaiPasarActivity extends AppCompatActivity {
                 hargaTanahPerMeter4 = (hargaJualProperty4 - hargaBangunanSaatIni4) / luasTanah4;
             }
             count++;
-            listAngkaNilaiPasar.add(new PropertiNilaiPasar(idNilaiPasar,"5", ""+hargaJualProperty4, ""+luasTanah4, ""+luasBangunan4, ""+usiaBangunan4, ""+hargaRataBangunanPerMeter4, ""+hargaBangunanBaru4, ""+hargaBangunanSaatIni4, ""+hargaTanahPerMeter4));
+            listAngkaNilaiPasar.set(4, new PropertiNilaiPasar(idNilaiPasar,"5", ""+hargaJualProperty4, ""+luasTanah4, ""+luasBangunan4, ""+usiaBangunan4, ""+hargaRataBangunanPerMeter4, ""+hargaBangunanBaru4, ""+hargaBangunanSaatIni4, ""+hargaTanahPerMeter4));
         }
         if(etHargaJualPropertyLima.getText().toString().equalsIgnoreCase("0") || TextUtils.isEmpty(etHargaJualPropertyLima.getText().toString()) || TextUtils.isEmpty(etLuasTanahLima.getText().toString()) || TextUtils.isEmpty(etLuasBangunanLima.getText().toString()) || TextUtils.isEmpty(etUsiaBangunanLima.getText().toString()) || TextUtils.isEmpty(etHargaRataBangunanPerMeterLima.getText().toString())){
-//            listAngkaNilaiPasar.set(5, new PropertiNilaiPasar(idNilaiPasar,"6",""+0,""+0,""+0,""+0,""+0,""+0,""+0, ""+0));
+            listAngkaNilaiPasar.set(5, new PropertiNilaiPasar(idNilaiPasar,"6",""+0,""+0,""+0,""+0,""+0,""+0,""+0, ""+0));
             count--;
         }
         else{
@@ -639,22 +639,28 @@ public class NilaiPasarActivity extends AppCompatActivity {
                 hargaTanahPerMeter5 = (hargaJualProperty5 - hargaBangunanSaatIni5) / luasTanah5;
             }
             count++;
-            listAngkaNilaiPasar.add(new PropertiNilaiPasar(""+idNilaiPasar,"6", ""+hargaJualProperty5, ""+luasTanah5, ""+luasBangunan5, ""+usiaBangunan5, ""+hargaRataBangunanPerMeter5, ""+hargaBangunanBaru5, ""+hargaBangunanSaatIni5, ""+hargaTanahPerMeter5));
+            listAngkaNilaiPasar.set(5, new PropertiNilaiPasar(""+idNilaiPasar,"6", ""+hargaJualProperty5, ""+luasTanah5, ""+luasBangunan5, ""+usiaBangunan5, ""+hargaRataBangunanPerMeter5, ""+hargaBangunanBaru5, ""+hargaBangunanSaatIni5, ""+hargaTanahPerMeter5));
         }
     }
 
     @OnClick(R.id.btn_review)
     public void reviewProperty(){
+        listAngkaNilaiPasar.clear();
+        for(int i=0;i<=5;i++){
+            listAngkaNilaiPasar.add(new PropertiNilaiPasar(idNilaiPasar,""+(i+1),"0","0","0","0","0","0", "", ""));
+        }
+
         if(TextUtils.isEmpty(etHargaJualProperty.getText().toString()) || TextUtils.isEmpty(etLuasTanah.getText().toString()) || TextUtils.isEmpty(etLuasBangunan.getText().toString()) || TextUtils.isEmpty(etUsiaBangunan.getText().toString()) || TextUtils.isEmpty(etHargaRataBangunanPerMeter.getText().toString())){
             Toast.makeText(this, getString(R.string.data_properti_incaran_belum_lengkap), Toast.LENGTH_SHORT).show();
         }
         else if(TextUtils.isEmpty(etHargaJualPropertySatu.getText().toString()) || TextUtils.isEmpty(etLuasTanahSatu.getText().toString()) || TextUtils.isEmpty(etLuasBangunanSatu.getText().toString()) || TextUtils.isEmpty(etUsiaBangunanSatu.getText().toString()) || TextUtils.isEmpty(etHargaRataBangunanPerMeterSatu.getText().toString())){
             Toast.makeText(this, getString(R.string.properti_satu_wajib_diisi), Toast.LENGTH_SHORT).show();
         }
-        else if(TextUtils.isEmpty(etCatatanKondisiBangunan.getText().toString()) || TextUtils.isEmpty(etCatatanSurveyLokasi.getText().toString())){
-            Toast.makeText(this, getString(R.string.catatan_belum_diisi), Toast.LENGTH_SHORT).show();
-        }
         else{
+            if(TextUtils.isEmpty(etCatatanKondisiBangunan.getText().toString()) || TextUtils.isEmpty(etCatatanSurveyLokasi.getText().toString())){
+                catatanKondisi = "";
+                catatanSurvey = "";
+            }
 
             count = 6;
 
@@ -675,7 +681,7 @@ public class NilaiPasarActivity extends AppCompatActivity {
             else{
                 hargaTanahPerMeter = (hargaJualProperty - hargaBangunanSaatIni) / luasTanah;
             }
-            listAngkaNilaiPasar.add(new PropertiNilaiPasar(idNilaiPasar, "1", ""+hargaJualProperty, ""+luasTanah, ""+luasBangunan, ""+usiaBangunan, ""+hargaRataBangunanPerMeter, ""+hargaBangunanBaru, ""+hargaBangunanSaatIni, ""+hargaTanahPerMeter));
+            listAngkaNilaiPasar.set(0, new PropertiNilaiPasar(idNilaiPasar, "1", ""+hargaJualProperty, ""+luasTanah, ""+luasBangunan, ""+usiaBangunan, ""+hargaRataBangunanPerMeter, ""+hargaBangunanBaru, ""+hargaBangunanSaatIni, ""+hargaTanahPerMeter));
 
             //properti satu
             String sHargaJualProperti1 = (etHargaJualPropertySatu.getText().toString()).replace(".", "");
@@ -694,12 +700,34 @@ public class NilaiPasarActivity extends AppCompatActivity {
             else{
                 hargaTanahPerMeter1 = (hargaJualProperty1 - hargaBangunanSaatIni1) / luasTanah1;
             }
-            listAngkaNilaiPasar.add(new PropertiNilaiPasar(idNilaiPasar, "2", ""+hargaJualProperty1, ""+luasTanah1, ""+luasBangunan1, ""+usiaBangunan1, ""+hargaRataBangunanPerMeter1, ""+hargaBangunanBaru1, ""+hargaBangunanSaatIni1, ""+hargaTanahPerMeter1));
+            listAngkaNilaiPasar.set(1, new PropertiNilaiPasar(idNilaiPasar, "2", ""+hargaJualProperty1, ""+luasTanah1, ""+luasBangunan1, ""+usiaBangunan1, ""+hargaRataBangunanPerMeter1, ""+hargaBangunanBaru1, ""+hargaBangunanSaatIni1, ""+hargaTanahPerMeter1));
 
             checkValue();
 
             catatanKondisi = etCatatanKondisiBangunan.getText().toString();
             catatanSurvey = etCatatanSurveyLokasi.getText().toString();
+
+            if(count==2){
+                count = 1;
+            }
+            else if(count==4){
+                count = 2;
+            }
+            else if(count==6){
+                count = 3;
+            }
+            else if(count==8){
+                count = 4;
+            }
+            else if(count==10){
+                count = 5;
+            }
+
+            for(int i=5; i>count; i--){
+                listAngkaNilaiPasar.remove(i);
+            }
+
+//            Toast.makeText(this, "count : "+count+"\n list count :"+listAngkaNilaiPasar.size(), Toast.LENGTH_SHORT).show();
 
             Intent i = new Intent(NilaiPasarActivity.this, ReviewNilaiPasarActivity.class);
             i.putExtra("Count", count);

@@ -32,6 +32,8 @@ import com.analisaproperti.analisaproperti.api.UtilsApi;
 import com.analisaproperti.analisaproperti.model.nilaipasar.NilaiPasar;
 import com.analisaproperti.analisaproperti.model.response.ResponseNilaiPasar;
 import com.analisaproperti.analisaproperti.utils.SharedPreferencesUtils;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import org.json.JSONObject;
 
@@ -64,6 +66,8 @@ public class NilaiPasarFragment extends Fragment {
     String idUser;
     int idNilaiPasar;
 
+    AdView adBottom;
+
     private SharedPreferencesUtils userDataSharedPreferences;
 
 
@@ -92,6 +96,11 @@ public class NilaiPasarFragment extends Fragment {
 
         SharedPreferences pref = getContext().getSharedPreferences("setting", Activity.MODE_PRIVATE);
         setLocale(pref.getString("language", ""));
+
+        adBottom = view.findViewById(R.id.ad_bottom);
+        AdRequest adRequest = new AdRequest.Builder()
+                .build();
+        adBottom.loadAd(adRequest);
 
         userDataSharedPreferences = new SharedPreferencesUtils(getContext(), "UserData");
         try {

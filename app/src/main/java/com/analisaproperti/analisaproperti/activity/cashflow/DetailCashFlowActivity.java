@@ -18,6 +18,8 @@ import com.analisaproperti.analisaproperti.model.cashflow.Pemasukan;
 import com.analisaproperti.analisaproperti.model.cashflow.Pengeluaran;
 import com.analisaproperti.analisaproperti.model.cashflow.UpgradeFasilitas;
 import com.analisaproperti.analisaproperti.utils.SharedPreferencesUtils;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -59,6 +61,11 @@ public class DetailCashFlowActivity extends AppCompatActivity {
     List<Pengeluaran> listPengeluaran;
     List<UpgradeFasilitas> listFasilitas;
 
+    @BindView(R.id.ad_top)
+    AdView topAds;
+    @BindView(R.id.ad_bottom)
+    AdView bottomAds;
+
     int occupationRate;
 
     String tipeKamar;
@@ -88,9 +95,14 @@ public class DetailCashFlowActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail_cash_flow);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(getResources().getString(R.string.nav_cash_flow));
+        getSupportActionBar().setTitle(getResources().getString(R.string.detail_cash_flow));
 
         ButterKnife.bind(this);
+
+        AdRequest adRequest = new AdRequest.Builder()
+                .build();
+        topAds.loadAd(adRequest);
+        bottomAds.loadAd(adRequest);
 
         listKamar = new ArrayList<>();
         listPemasukan = new ArrayList<>();

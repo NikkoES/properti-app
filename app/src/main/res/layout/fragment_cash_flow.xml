@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.CashFlowFragment">
 
     <android.support.v7.widget.RecyclerView
@@ -21,6 +22,14 @@
         android:gravity="center"
         android:text="@string/tekan_tombol"
         android:visibility="gone"/>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/ad_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/ad_id_banner_tes" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/btn_add_cash_flow"

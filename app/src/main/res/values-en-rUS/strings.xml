@@ -4,6 +4,10 @@
     <string name="tag_line">Analyse Property In Easiest Way</string>
     <string name="action_settings">Settings</string>
 
+    <string name="detail_cicilan">Detail Installment</string>
+    <string name="detail_nilai_pasar">Detail Market Value</string>
+    <string name="detail_cash_flow">Detail Cash Flow</string>
+
     <!--navigation menu-->
     <string name="nav_home">Home</string>
     <string name="nav_cicilan">Installment Calculator</string>
@@ -47,7 +51,8 @@
     <string name="hapus">Delete</string>
     <string name="ubah">Edit</string>
 
-    <string name="pilih_salah_satu">Choose one :</string>
+    <string name="pilih_salah_satu_bulan">Choose one (month) :</string>
+    <string name="pilih_salah_satu_persen">Choose one (%) :</string>
     <string name="tekan_tombol">Press the add button below to start calculate</string>
 
     <!--dialog-->

@@ -3,6 +3,10 @@
     <string name="tag_line">Mudahnya menganalisa properti</string>
     <string name="action_settings">Settings</string>
 
+    <string name="detail_cicilan">Detail Cicilan</string>
+    <string name="detail_nilai_pasar">Detail Nilai Pasar</string>
+    <string name="detail_cash_flow">Detail Cash Flow</string>
+
     <!--navigation menu-->
     <string name="nav_home">Beranda</string>
     <string name="nav_cicilan">Kalkulator Cicilan</string>
@@ -46,7 +50,8 @@
     <string name="hapus">Hapus</string>
     <string name="ubah">Ubah</string>
 
-    <string name="pilih_salah_satu">Pilih salah satu :</string>
+    <string name="pilih_salah_satu_bulan">Pilih salah satu (bulan) :</string>
+    <string name="pilih_salah_satu_persen">Pilih salah satu (%) :</string>
     <string name="tekan_tombol">Tekan tombol tambah di bawah ini untuk mulai menghitung</string>
 
     <!--dialog-->

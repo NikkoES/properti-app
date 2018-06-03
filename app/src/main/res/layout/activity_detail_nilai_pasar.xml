@@ -5,6 +5,14 @@
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/ad_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/ad_id_banner_tes" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -275,5 +283,13 @@
         </LinearLayout>
 
     </ScrollView>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/ad_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/ad_id_banner_tes" />
 
 </LinearLayout>

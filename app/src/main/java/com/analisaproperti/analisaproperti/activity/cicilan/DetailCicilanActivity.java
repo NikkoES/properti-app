@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import com.analisaproperti.analisaproperti.R;
 import com.analisaproperti.analisaproperti.model.cicilan.Cicilan;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -41,6 +43,11 @@ public class DetailCicilanActivity extends AppCompatActivity {
     @BindView(R.id.txt_cicilan_floating)
     TextView txtCicilanFloating;
 
+    @BindView(R.id.ad_top)
+    AdView topAds;
+    @BindView(R.id.ad_bottom)
+    AdView bottomAds;
+
     List<Cicilan> listCicilan = new ArrayList<>();
     int position;
 
@@ -65,9 +72,14 @@ public class DetailCicilanActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail_cicilan);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(getResources().getString(R.string.nav_cicilan));
+        getSupportActionBar().setTitle(getResources().getString(R.string.detail_cicilan));
 
         ButterKnife.bind(this);
+
+        AdRequest adRequest = new AdRequest.Builder()
+                .build();
+        topAds.loadAd(adRequest);
+        bottomAds.loadAd(adRequest);
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 

@@ -171,7 +171,7 @@ public class CicilanActivity extends AppCompatActivity {
     @OnClick(R.id.et_bunga_per_tahun)
     public void setBungaPerTahun(){
         AlertDialog.Builder builderBungaPerTahun = new AlertDialog.Builder(this);
-        builderBungaPerTahun.setTitle(getString(R.string.pilih_salah_satu));
+        builderBungaPerTahun.setTitle(getString(R.string.pilih_salah_satu_persen));
 
         final ArrayAdapter<String> arrayBungaPerTahun = new ArrayAdapter<String>(this, android.R.layout.select_dialog_singlechoice);
         for(i=1; i<=20; i++){
@@ -199,7 +199,7 @@ public class CicilanActivity extends AppCompatActivity {
     @OnClick(R.id.et_lama_pinjaman)
     public void setLamaPinjaman(){
         AlertDialog.Builder buiderTenorPinjaman = new AlertDialog.Builder(this);
-        buiderTenorPinjaman.setTitle(getString(R.string.pilih_salah_satu));
+        buiderTenorPinjaman.setTitle(getString(R.string.pilih_salah_satu_bulan));
 
         final ArrayAdapter<String> arrayTenorPinjaman = new ArrayAdapter<String>(this, android.R.layout.select_dialog_singlechoice);
         for(i=12; i<=240; i+=12){
@@ -227,10 +227,10 @@ public class CicilanActivity extends AppCompatActivity {
     @OnClick(R.id.et_tenor_bunga_fix)
     public void setTenorBungaFix(){
         AlertDialog.Builder builderBungaFix = new AlertDialog.Builder(this);
-        builderBungaFix.setTitle(getString(R.string.pilih_salah_satu));
+        builderBungaFix.setTitle(getString(R.string.pilih_salah_satu_bulan));
 
         final ArrayAdapter<String> arrayBungaFix = new ArrayAdapter<String>(this, android.R.layout.select_dialog_singlechoice);
-        for(i=36; i<=48; i++){
+        for(i=12; i<=240; i+=12){
             arrayBungaFix.add(""+i);
         }
 
@@ -255,7 +255,7 @@ public class CicilanActivity extends AppCompatActivity {
     @OnClick(R.id.et_bunga_floating)
     public void setBungaFloating(){
         AlertDialog.Builder builderBungaFloating = new AlertDialog.Builder(this);
-        builderBungaFloating.setTitle(getString(R.string.pilih_salah_satu));
+        builderBungaFloating.setTitle(getString(R.string.pilih_salah_satu_persen));
 
         final ArrayAdapter<String> arrayBungaFloating = new ArrayAdapter<String>(this, android.R.layout.select_dialog_singlechoice);
         for(i=1; i<=5; i++){

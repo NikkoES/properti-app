@@ -32,6 +32,8 @@ import com.analisaproperti.analisaproperti.api.UtilsApi;
 import com.analisaproperti.analisaproperti.model.cicilan.Cicilan;
 import com.analisaproperti.analisaproperti.model.response.ResponseCicilan;
 import com.analisaproperti.analisaproperti.utils.SharedPreferencesUtils;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import org.json.JSONObject;
 
@@ -64,6 +66,8 @@ public class CicilanFragment extends Fragment {
     String idUser;
     int idCicilan;
 
+    AdView adBottom;
+
     private SharedPreferencesUtils userDataSharedPreferences;
 
     public CicilanFragment() {
@@ -88,6 +92,11 @@ public class CicilanFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_cicilan, container, false);
+
+        adBottom = view.findViewById(R.id.ad_bottom);
+        AdRequest adRequest = new AdRequest.Builder()
+                .build();
+        adBottom.loadAd(adRequest);
 
         SharedPreferences pref = getContext().getSharedPreferences("setting", Activity.MODE_PRIVATE);
         setLocale(pref.getString("language", ""));
