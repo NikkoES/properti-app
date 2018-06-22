@@ -25,25 +25,19 @@
     </group>
 
     <group
-        android:id="@+id/group_setting"
-        android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_setting"
-            android:icon="@drawable/ic_setting"
-            android:title="@string/nav_pengaturan" />
-    </group>
-
-    <group
         android:id="@+id/group_other"
         android:checkableBehavior="none">
         <item
             android:id="@+id/nav_bantuan"
+            android:icon="@drawable/ic_bantuan"
             android:title="@string/nav_bantuan" />
         <item
             android:id="@+id/nav_beri_5_bintang"
+            android:icon="@drawable/ic_5_bintang"
             android:title="@string/nav_give_five_star" />
         <item
             android:id="@+id/nav_keluar"
+            android:icon="@drawable/ic_keluar"
             android:title="@string/nav_keluar" />
     </group>
 

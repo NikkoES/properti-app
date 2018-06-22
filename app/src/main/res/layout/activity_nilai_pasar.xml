@@ -640,7 +640,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_margin="2dp"
-                    android:background="@color/colorPrimary"
+                    android:background="@color/btn_nilai_pasar"
                     android:textColor="@color/colorWhite"
                     android:text="@string/back"
                     android:textStyle="bold"/>
@@ -651,7 +651,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_margin="2dp"
-                    android:background="@color/colorPrimary"
+                    android:background="@color/btn_nilai_pasar"
                     android:textColor="@color/colorWhite"
                     android:text="@string/review"
                     android:textStyle="bold"/>
@@ -662,7 +662,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_margin="2dp"
-                    android:background="@color/colorPrimary"
+                    android:background="@color/btn_nilai_pasar"
                     android:textColor="@color/colorWhite"
                     android:text="@string/next"
                     android:textStyle="bold"/>

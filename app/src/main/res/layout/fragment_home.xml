@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -14,124 +14,147 @@
         android:id="@+id/ad_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
+        android:layout_gravity="center"
         ads:adSize="BANNER"
         ads:adUnitId="@string/ad_id_banner_tes" />
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:orientation="vertical">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_centerVertical="true">
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/menu_cicilan"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="16dp"
-                android:orientation="horizontal"
-                android:background="@color/colorSoftPrimary">
-
-                <ImageView
-                    android:layout_width="72dp"
-                    android:layout_height="72dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/cicilan"/>
+                android:layout_height="0dp"
+                android:layout_weight="0.8">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="@string/nav_cicilan"
+                    android:layout_margin="12dp"
+                    android:text="@string/nav_main"
                     android:textColor="@color/colorWhite"
+                    android:background="@drawable/ic_daftar_menu"
                     android:gravity="center_vertical|center"
                     android:textSize="22sp"
                     android:textStyle="bold" />
 
-            </LinearLayout>
+            </android.support.v7.widget.CardView>
 
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/menu_nilai_pasar"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="8dp"
-            android:layout_weight="1">
-
-            <LinearLayout
+            <android.support.v7.widget.CardView
+                android:id="@+id/menu_cicilan"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="16dp"
-                android:orientation="horizontal"
-                android:background="@color/colorSoftPrimary">
+                android:layout_height="0dp"
+                android:layout_weight="1">
 
-                <ImageView
-                    android:layout_width="72dp"
-                    android:layout_height="72dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/nilaipasar"/>
-
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="@string/nav_nilai_pasar"
-                    android:textColor="@color/colorWhite"
-                    android:gravity="center_vertical|center"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
+                    android:padding="16dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/btn_cicilan">
 
-            </LinearLayout>
+                    <ImageView
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/cicilan"/>
 
-        </android.support.v7.widget.CardView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/nav_cicilan"
+                        android:textColor="@color/colorWhite"
+                        android:gravity="center_vertical|center"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/menu_cashflow"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="8dp"
-            android:layout_weight="1">
+                </LinearLayout>
 
-            <LinearLayout
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/menu_nilai_pasar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="16dp"
-                android:orientation="horizontal"
-                android:background="@color/colorSoftPrimary">
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1">
 
-                <ImageView
-                    android:layout_width="72dp"
-                    android:layout_height="72dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/cashflow"/>
-
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="@string/nav_cash_flow"
-                    android:textColor="@color/colorWhite"
-                    android:gravity="center_vertical|center"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
+                    android:padding="16dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/btn_nilai_pasar">
 
-            </LinearLayout>
+                    <ImageView
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/nilaipasar"/>
 
-        </android.support.v7.widget.CardView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/nav_nilai_pasar"
+                        android:textColor="@color/colorWhite"
+                        android:gravity="center_vertical|center"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
 
-    </LinearLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/menu_cashflow"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/btn_cash_flow">
+
+                    <ImageView
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/cashflow"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/nav_cash_flow"
+                        android:textColor="@color/colorWhite"
+                        android:gravity="center_vertical|center"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/ad_bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
         ads:adSize="BANNER"
         ads:adUnitId="@string/ad_id_banner_tes" />
 
-</RelativeLayout>
+</LinearLayout>

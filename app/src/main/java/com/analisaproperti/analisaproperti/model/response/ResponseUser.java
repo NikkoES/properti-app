@@ -31,14 +31,17 @@ public class ResponseUser {
         String noHp;
         @SerializedName("email")
         String email;
+        @SerializedName("password")
+        String password;
         @SerializedName("img_profile")
         String imgProfile;
 
-        public Data(String idUser, String namaUser, String noHp, String email, String imgProfile) {
+        public Data(String idUser, String namaUser, String noHp, String email, String password, String imgProfile) {
             this.idUser = idUser;
             this.namaUser = namaUser;
             this.noHp = noHp;
             this.email = email;
+            this.password = password;
             this.imgProfile = imgProfile;
         }
 
@@ -58,9 +61,12 @@ public class ResponseUser {
             return email;
         }
 
+        public String getPassword() {
+            return password;
+        }
+
         public String getImgProfile() {
             return imgProfile;
         }
-
     }
 }

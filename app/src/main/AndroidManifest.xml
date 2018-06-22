@@ -81,12 +81,16 @@
         <activity
             android:name=".activity.BantuanActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".activity.cicilan.DetailCicilanActivity"
-            android:theme="@style/AppTheme"/>
-        <activity android:name=".activity.cashflow.DetailCashFlowActivity"
-            android:theme="@style/AppTheme"/>
-        <activity android:name=".activity.nilaipasar.DetailNilaiPasarActivity"
-            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".activity.cicilan.DetailCicilanActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.cashflow.DetailCashFlowActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.nilaipasar.DetailNilaiPasarActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".activity.LupaPasswordActivity"></activity>
     </application>
 
 </manifest>

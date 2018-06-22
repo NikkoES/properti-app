@@ -18,6 +18,7 @@
     <string name="nav_pengaturan">Language Setting</string>
     <string name="nav_give_five_star">Give Us Five Stars</string>
     <string name="nav_keluar">Logout</string>
+    <string name="nav_main">Menu List :</string>
 
     <!--login register-->
     <string name="login">Login</string>
@@ -28,6 +29,7 @@
     <string name="reg_no_hp">Phone Number</string>
     <string name="reg_password">Password</string>
     <string name="register">Register</string>
+    <string name="kirim">Send</string>
     <string name="sudah_punya_akun">Have been registered ? Please login here</string>
     <string name="login_berhasil">Login Success</string>
     <string name="register_berhasil">Registered Success</string>
@@ -73,6 +75,9 @@
     <string name="catatan_belum_diisi">Note hasn\`t been filled !</string>
     <string name="data_belum_dihitung">Data hasn\`t been calculated !</string>
 
+    <string name="nama_file">File Name</string>
+    <string name="masukan_nama_file">Input the file name :</string>
+
     <string name="final_result">Final Result</string>
 
     <!--menu cicilan-->
@@ -102,8 +107,8 @@
     <string name="properti_empat">Property #4</string>
     <string name="properti_lima">Property #5</string>
     <string name="harga_jual_properti">Property\`s Selling Price</string>
-    <string name="luas_tanah">Land\`s Square Measure</string>
-    <string name="luas_bangunan">Building Square Measure</string>
+    <string name="luas_tanah">Land\`s Square Measure (m2)</string>
+    <string name="luas_bangunan">Building Square Measure (m2)</string>
     <string name="usia_bangunan">Building\`s Age</string>
     <string name="usia_bangunan_tahun">Building\`s Age (Year)</string>
     <string name="harga_rata_bangunan">Per Meter  Average Price of Building </string>
@@ -124,7 +129,7 @@
     <string name="tipe_kamar">Room Type</string>
     <string name="jumlah_kamar">Room\`s Amount</string>
     <string name="harga_kamar">Room Price</string>
-    <string name="occupancy_rate">Occupancy Rate</string>
+    <string name="occupancy_rate">Occupancy Rate (%)</string>
     <string name="occupancy_rate_belum_diisi">Occupancy Rate hasn\`t been filled !</string>
     <string name="tambah_kamar">Add Room</string>
     <string name="total_penghasilan">Income Total</string>

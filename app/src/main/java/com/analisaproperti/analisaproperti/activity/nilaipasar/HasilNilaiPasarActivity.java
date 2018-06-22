@@ -115,6 +115,12 @@ public class HasilNilaiPasarActivity extends AppCompatActivity {
         keterangan = getIntent().getStringExtra("keterangan");
 
         DecimalFormat dFormat = new DecimalFormat("#.##");
+        if(hargaPasaranPerMeter<0){
+            hargaPasaranPerMeter = hargaPasaranPerMeter * -1;
+        }
+        else{
+            hargaPasaranPerMeter = hargaPasaranPerMeter * 1;
+        }
         txtHargaPasaranPerMeter.setText(concat(currencyFormatter(hargaPasaranPerMeter)));
         txtPerbandinganProperti.setText(""+Double.valueOf(dFormat.format(perbandinganPropertiIncaran))+"%");
         if(perbandinganPropertiIncaran < 99){

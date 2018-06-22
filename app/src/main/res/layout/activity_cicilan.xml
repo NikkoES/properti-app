@@ -196,7 +196,7 @@
                     android:id="@+id/btn_hitung"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/colorPrimary"
+                    android:background="@color/btn_cicilan"
                     android:textColor="@color/colorWhite"
                     android:text="@string/hitung"
                     android:textStyle="bold"/>

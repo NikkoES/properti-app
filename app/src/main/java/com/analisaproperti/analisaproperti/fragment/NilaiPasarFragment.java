@@ -133,7 +133,7 @@ public class NilaiPasarFragment extends Fragment {
                 etKeterangan.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_NORMAL);
 
                 txtJudul = new TextView(getContext());
-                txtJudul.setText(getString(R.string.sub_judul_nilai_pasar));
+                txtJudul.setText(getString(R.string.masukan_nama_file));
                 txtJudul.setGravity(0);
 
                 LinearLayout ll = new LinearLayout(getContext());
@@ -143,7 +143,7 @@ public class NilaiPasarFragment extends Fragment {
                 ll.addView(etKeterangan);
 
                 AlertDialog dialog = new AlertDialog.Builder(getContext())
-                        .setTitle(getString(R.string.judul_nilai_pasar))
+                        .setTitle(getString(R.string.nama_file))
                         .setView(ll)
                         .setPositiveButton(getString(R.string.tambah), new DialogInterface.OnClickListener() {
                             @Override

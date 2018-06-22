@@ -6,4 +6,8 @@
     <color name="colorWhite">#ffffff</color>
     <color name="colorSoftPrimary">#fd4949</color>
     <color name="colorGray">#edebeb</color>
+
+    <color name="btn_cicilan">#076fca</color>
+    <color name="btn_nilai_pasar">#bf00fe</color>
+    <color name="btn_cash_flow">#0eae4c</color>
 </resources>

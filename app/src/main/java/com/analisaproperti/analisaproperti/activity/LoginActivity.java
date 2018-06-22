@@ -224,7 +224,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                         if (response.body().getData().equalsIgnoreCase("1")){
                             loadingDaftar.dismiss();
                             getUserData(sEmail);
-                            Toast.makeText(getApplicationContext(), getString(R.string.login_berhasil), Toast.LENGTH_SHORT).show();
                         } else {
                             loadingDaftar.dismiss();
                             Toast.makeText(getApplicationContext(), getString(R.string.gagal_login_not_match), Toast.LENGTH_SHORT).show();
@@ -351,6 +350,12 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             handleResult(result);
         }
+    }
+
+    @OnClick(R.id.btn_to_forgot_password)
+    public void toLupaPassword(){
+        startActivity(new Intent(getApplicationContext(), LupaPasswordActivity.class));
+        overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
     }
 
 }

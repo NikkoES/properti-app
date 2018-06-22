@@ -19,6 +19,8 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -120,6 +122,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Configuration config = new Configuration();
         config.locale = locale;
         getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+
+        SharedPreferences.Editor editor = getSharedPreferences("setting", MODE_PRIVATE).edit();
+        editor.putString("language", lang);
+        editor.apply();
     }
 
     @Override
@@ -164,10 +170,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_cash_flow:
                 fragment = new CashFlowFragment();
                 break;
-            case R.id.nav_setting:
-                i = new Intent(getApplicationContext(), PengaturanBahasaActivity.class);
-                startActivity(i);
-                break;
             case R.id.nav_bantuan:
                 i = new Intent(getApplicationContext(), BantuanActivity.class);
                 startActivity(i);
@@ -200,6 +202,45 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.pilihan_bahasa, menu);
+
+        // return true so that the menu pop up is opened
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId())
+        {
+            case R.id.lang_english:
+                setInggris();
+                break;
+            case R.id.lang_indo:
+                setIndo();
+                break;
+        }
+        return true;
+    }
+
+    public void setInggris(){
+        setLocale("en");
+        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(i);
+        overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+    }
+
+    public void setIndo(){
+        setLocale("in");
+        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(i);
+        overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
     }
 
     private void logout(){

@@ -195,7 +195,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimary"
+                    android:background="@color/btn_nilai_pasar"
                     android:text="@string/back"
                     android:textColor="@color/colorWhite"
                     android:textStyle="bold" />
@@ -206,7 +206,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimary"
+                    android:background="@color/btn_nilai_pasar"
                     android:text="@string/selesai"
                     android:textColor="@color/colorWhite"
                     android:textStyle="bold" />

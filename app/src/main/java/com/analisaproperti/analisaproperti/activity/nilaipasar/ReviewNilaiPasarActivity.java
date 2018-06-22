@@ -89,22 +89,6 @@ public class ReviewNilaiPasarActivity extends AppCompatActivity {
         listAngkaNilaiPasar = (ArrayList<PropertiNilaiPasar>)getIntent().getSerializableExtra("NilaiPasar");
         countProperty = getIntent().getIntExtra("Count", 0);
 
-//        if(countProperty==2){
-//            countProperty = 1;
-//        }
-//        else if(countProperty==4){
-//            countProperty = 2;
-//        }
-//        else if(countProperty==6){
-//            countProperty = 3;
-//        }
-//        else if(countProperty==8){
-//            countProperty = 4;
-//        }
-//        else if(countProperty==10){
-//            countProperty = 5;
-//        }
-
         //final result
         for(int j=1; j<=countProperty; j++){
             PropertiNilaiPasar pasaranPerMeter = listAngkaNilaiPasar.get(j);
