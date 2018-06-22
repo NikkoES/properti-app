@@ -255,6 +255,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                         userProfile.put("id_user", data.getIdUser());
                         userProfile.put("name", data.getNamaUser());
                         userProfile.put("email", data.getEmail());
+                        userProfile.put("password", data.getPassword());
                         userProfile.put("phonenumber", data.getNoHp());
                         userProfile.put("profile_photo", ""+data.getImgProfile());
 

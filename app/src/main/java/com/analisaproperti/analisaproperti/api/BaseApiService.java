@@ -36,6 +36,15 @@ public interface BaseApiService {
     @GET("profile/{email}")
     Call<ResponseUser> getUserData(@Path("email") String email);
 
+    @FormUrlEncoded
+    @PUT("profile/{id_user}")
+    Call<ResponsePost> editProfile(@Path("id_user") String idUser,
+                                   @Field("nama_user") String nama,
+                                   @Field("no_hp") String noHp,
+                                   @Field("email") String email,
+                                   @Field("password") String password,
+                                   @Field("img_profile") String image);
+
     @GET("cicilan/{id_user}")
     Call<ResponseCicilan> getAllCicilan(@Path("id_user") String id_user);
 

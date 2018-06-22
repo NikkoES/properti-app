@@ -170,6 +170,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_cash_flow:
                 fragment = new CashFlowFragment();
                 break;
+            case R.id.nav_edit_profil:
+                i = new Intent(getApplicationContext(), EditProfileActivity.class);
+                startActivity(i);
+                break;
             case R.id.nav_bantuan:
                 i = new Intent(getApplicationContext(), BantuanActivity.class);
                 startActivity(i);

@@ -9,6 +9,7 @@
     <string name="detail_cash_flow">Detail Cash Flow</string>
 
     <!--navigation menu-->
+    <string name="id_user">ID User</string>
     <string name="nav_home">Home</string>
     <string name="nav_cicilan">Installment Calculator</string>
     <string name="nav_nilai_pasar">Market Value Calculator</string>
@@ -17,6 +18,7 @@
     <string name="nav_bantuan">Help</string>
     <string name="nav_pengaturan">Language Setting</string>
     <string name="nav_give_five_star">Give Us Five Stars</string>
+    <string name="nav_edit_profil">Edit Profile</string>
     <string name="nav_keluar">Logout</string>
     <string name="nav_main">Menu List :</string>
 
@@ -29,6 +31,10 @@
     <string name="reg_no_hp">Phone Number</string>
     <string name="reg_password">Password</string>
     <string name="register">Register</string>
+    <string name="password_lama">Old Password</string>
+    <string name="password_baru">New Password</string>
+    <string name="password_baru_2">Repeat New Password</string>
+    <string name="simpan">Save</string>
     <string name="kirim">Send</string>
     <string name="sudah_punya_akun">Have been registered ? Please login here</string>
     <string name="login_berhasil">Login Success</string>
@@ -58,6 +64,9 @@
     <string name="tekan_tombol">Press the add button below to start calculate</string>
 
     <!--dialog-->
+    <string name="data_password_belum_lengkap">Data password hasn\'t be filled !</string>
+    <string name="password_baru_tidak_match">New Password is doesn\'t match !</string>
+    <string name="password_lama_salah">Old password not correct !</string>
     <string name="berhasil_disimpan">Data has been saved</string>
     <string name="gagal_disimpan">Data cannot be saved !</string>
     <string name="berhasil_diubah">Data has been changed</string>

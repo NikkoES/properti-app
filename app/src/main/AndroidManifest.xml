@@ -90,7 +90,9 @@
         <activity
             android:name=".activity.nilaipasar.DetailNilaiPasarActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".activity.LupaPasswordActivity"></activity>
+        <activity android:name=".activity.LupaPasswordActivity" />
+        <activity android:name=".activity.EditProfileActivity"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

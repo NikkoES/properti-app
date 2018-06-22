@@ -16,17 +16,23 @@
     <string name="nav_bantuan">Bantuan</string>
     <string name="nav_pengaturan">Pengaturan Bahasa</string>
     <string name="nav_give_five_star">Beri Kami 5 Bintang</string>
+    <string name="nav_edit_profil">Ubah Profil</string>
     <string name="nav_keluar">Keluar</string>
     <string name="nav_main">Daftar Menu :</string>
 
     <!--login register-->
+    <string name="id_user">ID User</string>
     <string name="login">Masuk</string>
     <string name="lupa_password">Lupa Password ?</string>
     <string name="belum_punya_akun">Belum punya akun ? Daftar di sini</string>
-    <string name="reg_nama">Nama</string>
+    <string name="reg_nama">Nama Lengkap</string>
     <string name="reg_email">Email</string>
     <string name="reg_no_hp">Nomor HP</string>
     <string name="reg_password">Password</string>
+    <string name="password_lama">Password Lama</string>
+    <string name="password_baru">Password Baru</string>
+    <string name="password_baru_2">Ulangi Password Baru</string>
+    <string name="simpan">Simpan</string>
     <string name="register">Daftar</string>
     <string name="kirim">Kirim</string>
     <string name="sudah_punya_akun">Sudah punya akun ? Masuk di sini</string>
@@ -51,6 +57,9 @@
     <string name="tekan_tombol">Tekan tombol tambah di bawah ini untuk mulai menghitung</string>
 
     <!--dialog-->
+    <string name="data_password_belum_lengkap">Data password belum lengkap !</string>
+    <string name="password_baru_tidak_match">Password baru tidak match !</string>
+    <string name="password_lama_salah">Password lama salah !</string>
     <string name="berhasil_disimpan">Data berhasil disimpan</string>
     <string name="gagal_disimpan">Data gagal disimpan !</string>
     <string name="berhasil_diubah">Data berhasil diubah</string>
