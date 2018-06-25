@@ -90,16 +90,18 @@ public class RegisterActivity extends AppCompatActivity {
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                         if (response.isSuccessful()){
                             loadingDaftar.dismiss();
+                            Toast.makeText(getApplicationContext(), getString(R.string.register_berhasil), Toast.LENGTH_SHORT).show();
                             finish();
                         } else {
                             loadingDaftar.dismiss();
+                            Toast.makeText(getApplicationContext(), getString(R.string.gagal_register), Toast.LENGTH_SHORT).show();
                         }
                     }
 
                     @Override
                     public void onFailure(Call<ResponseBody> call, Throwable t) {
                         loadingDaftar.dismiss();
-                        Toast.makeText(getApplicationContext(), "Koneksi internet bermasalah !", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), getString(R.string.koneksi_internet_bermasalah), Toast.LENGTH_SHORT).show();
                     }
                 });
     }

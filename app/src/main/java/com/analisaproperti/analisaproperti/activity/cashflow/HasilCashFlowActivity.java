@@ -424,6 +424,64 @@ public class HasilCashFlowActivity extends AppCompatActivity {
         });
     }
 
+    public void deleteData(String idCashFlow){
+        apiService.deleteKamar(idCashFlow).enqueue(new Callback<ResponsePost>() {
+            @Override
+            public void onResponse(Call<ResponsePost> call, Response<ResponsePost> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponsePost> call, Throwable t) {
+
+            }
+        });
+        apiService.deletePemasukan(idCashFlow).enqueue(new Callback<ResponsePost>() {
+            @Override
+            public void onResponse(Call<ResponsePost> call, Response<ResponsePost> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponsePost> call, Throwable t) {
+
+            }
+        });
+        apiService.deletePengeluaran(idCashFlow).enqueue(new Callback<ResponsePost>() {
+            @Override
+            public void onResponse(Call<ResponsePost> call, Response<ResponsePost> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponsePost> call, Throwable t) {
+
+            }
+        });
+        apiService.deleteFasilitas(idCashFlow).enqueue(new Callback<ResponsePost>() {
+            @Override
+            public void onResponse(Call<ResponsePost> call, Response<ResponsePost> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponsePost> call, Throwable t) {
+
+            }
+        });
+        apiService.deleteExtras(idCashFlow).enqueue(new Callback<ResponsePost>() {
+            @Override
+            public void onResponse(Call<ResponsePost> call, Response<ResponsePost> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponsePost> call, Throwable t) {
+
+            }
+        });
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.action_save, menu);
@@ -468,23 +526,24 @@ public class HasilCashFlowActivity extends AppCompatActivity {
                 }
                 else{
                     actionUpdate();
+                    deleteData(idCashFlow);
                     for(int i=0;i<listKamar.size();i++){
                         Kamar data = listKamar.get(i);
-                        updateKamar(idCashFlow, data.getTipeKamar(), data.getJumlahKamar(), data.getHargaKamar());
+                        saveKamar(idCashFlow, data.getTipeKamar(), data.getJumlahKamar(), data.getHargaKamar());
                     }
                     for(int i=0;i<listPemasukan.size();i++){
                         Pemasukan data = listPemasukan.get(i);
-                        updatePemasukan(idCashFlow, data.getKeteranganPemasukan(), data.getJumlahPemasukan());
+                        savePemasukan(idCashFlow, data.getKeteranganPemasukan(), data.getJumlahPemasukan());
                     }
                     for(int i=0;i<listPengeluaran.size();i++){
                         Pengeluaran data = listPengeluaran.get(i);
-                        updatePengeluaran(idCashFlow, data.getKeteranganPengeluaran(), data.getJumlahPengeluaran());
+                        savePengeluaran(idCashFlow, data.getKeteranganPengeluaran(), data.getJumlahPengeluaran());
                     }
                     for(int i=0;i<listFasilitas.size();i++){
                         UpgradeFasilitas data = listFasilitas.get(i);
-                        updateFasilitas(idCashFlow, data.getNamaFasilitas(), data.getKenaikanHarga(), data.getJumlahKamar());
+                        saveFasilitas(idCashFlow, data.getNamaFasilitas(), data.getKenaikanHarga(), data.getJumlahKamar());
                     }
-                    updateExtras(idCashFlow, String.valueOf(occupancyRate), String.valueOf(penghasilanSewaKamar), String.valueOf(totalPemasukan), String.valueOf(totalPengeluaran), String.valueOf(netOperatingIncome), String.valueOf(netOperatingIncomeFuture));
+                    saveExtras(idCashFlow, String.valueOf(occupancyRate), String.valueOf(penghasilanSewaKamar), String.valueOf(totalPemasukan), String.valueOf(totalPengeluaran), String.valueOf(netOperatingIncome), String.valueOf(netOperatingIncomeFuture));
 
                 }
                 finish();

@@ -18,7 +18,7 @@
     <string name="nav_give_five_star">Beri Kami 5 Bintang</string>
     <string name="nav_edit_profil">Ubah Profil</string>
     <string name="nav_keluar">Keluar</string>
-    <string name="nav_main">Daftar Menu :</string>
+    <string name="nav_main">Pendahuluan</string>
 
     <!--login register-->
     <string name="id_user">ID User</string>
@@ -170,7 +170,6 @@
     <string name="facebook_app_id">1741753252610047</string>
     <string name="facebook_login_protocol_scheme">fb1741753252610047</string>
 
-    //question
     <string name="question_1">Bagaimana cara menghitung jumlah cicilan saya ?</string>
     <string name="question_2">Bagaimana cara menghitung nilai pasar baru ?</string>
     <string name="question_3">Bagaimana menghitung perkiraan cash flow property ?</string>

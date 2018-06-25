@@ -13,8 +13,11 @@ import android.widget.Toast;
 import com.analisaproperti.analisaproperti.R;
 import com.analisaproperti.analisaproperti.api.BaseApiService;
 import com.analisaproperti.analisaproperti.api.UtilsApi;
+import com.analisaproperti.analisaproperti.model.response.ResponsePost;
 import com.analisaproperti.analisaproperti.model.response.ResponseUser;
 import com.analisaproperti.analisaproperti.utils.GmailSender;
+
+import java.security.SecureRandom;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -34,6 +37,13 @@ public class LupaPasswordActivity extends AppCompatActivity {
 
     String email;
 
+    private SecureRandom random = new SecureRandom();
+
+    /** different dictionaries used */
+    private final String ALPHA_CAPS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    private final String ALPHA = "abcdefghijklmnopqrstuvwxyz";
+    private final String NUMERIC = "0123456789";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,8 +54,8 @@ public class LupaPasswordActivity extends AppCompatActivity {
         apiService = UtilsApi.getAPIService();
 
         loadingDaftar = new ProgressDialog(this);
-        loadingDaftar.setTitle("Loading");
-        loadingDaftar.setMessage("Sending Password");
+        loadingDaftar.setTitle("Checking Data");
+        loadingDaftar.setMessage("Please wait..");
         loadingDaftar.setCancelable(false);
     }
 
@@ -77,6 +87,7 @@ public class LupaPasswordActivity extends AppCompatActivity {
 
     private void checkProfile(final String email){
         loadingDaftar.show();
+        final String newPassword = generatePassword(8, ALPHA_CAPS + ALPHA + NUMERIC);
         apiService.getUserData(email)
                 .enqueue(new Callback<ResponseUser>() {
                     @Override
@@ -84,7 +95,7 @@ public class LupaPasswordActivity extends AppCompatActivity {
                         if (response.isSuccessful()){
                             ResponseUser.Data user = response.body().getData();
                             if(email.equalsIgnoreCase(user.getEmail())){
-                                sendPassword(user.getNamaUser(), email, user.getPassword());
+                                editProfile(user.getIdUser(), user.getNamaUser(), user.getNoHp(), user.getEmail(), newPassword, user.getImgProfile());
                             }
                             else{
                                 loadingDaftar.dismiss();
@@ -101,13 +112,40 @@ public class LupaPasswordActivity extends AppCompatActivity {
                 });
     }
 
+    private void editProfile(String id, final String nama, String noHp, final String email, final String password, String image){
+        loadingDaftar.dismiss();
+        final ProgressDialog dialog = new ProgressDialog(LupaPasswordActivity.this);
+        dialog.setTitle("Changing Password");
+        dialog.setMessage("Please wait..");
+        dialog.show();
+        apiService.editProfile(id ,nama, noHp, email, password, image)
+                .enqueue(new Callback<ResponsePost>() {
+                    @Override
+                    public void onResponse(Call<ResponsePost> call, Response<ResponsePost> response) {
+                        if (response.isSuccessful()){
+                            dialog.dismiss();
+                            sendPassword(nama, email, password);
+                        }
+                        else {
+                            loadingDaftar.dismiss();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponsePost> call, Throwable t) {
+                        loadingDaftar.dismiss();
+                        Toast.makeText(getApplicationContext(), getString(R.string.koneksi_internet_bermasalah), Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
     private void sendPassword(final String nama, final String email, final String password){
-        final String emailAdmin = "nikkoeka04@gmail.com";
-        final String passwordAdmin = "nikkoekamauliah";
+        final String emailAdmin = "luckynine.cs@gmail.com";
+        final String passwordAdmin = "bagusbagus09";
         loadingDaftar.dismiss();
         final ProgressDialog dialog = new ProgressDialog(LupaPasswordActivity.this);
         dialog.setTitle("Sending Password");
-        dialog.setMessage("Please wait");
+        dialog.setMessage("Please wait..");
         dialog.show();
         Thread sender = new Thread(new Runnable() {
             @Override
@@ -118,12 +156,12 @@ public class LupaPasswordActivity extends AppCompatActivity {
                             "Berikut adalah data akun anda : \n" +
                                     "Nama User : "+nama+"\n" +
                                     "Email : "+email+"\n" +
-                                    "Password : "+password,
+                                    "Password Baru : "+password,
                             emailAdmin,
                             email);
                     dialog.dismiss();
-                    finish();
                     Toast.makeText(LupaPasswordActivity.this, "Password berhasil dikirim", Toast.LENGTH_SHORT).show();
+                    finish();
                 }
                 catch (Exception e) {
                     Log.e("mylog", "Error: " + e.getMessage());
@@ -135,8 +173,13 @@ public class LupaPasswordActivity extends AppCompatActivity {
         sender.start();
     }
 
-    private void sendMessage() {
-
+    public String generatePassword(int len, String dic) {
+        String result = "";
+        for (int i = 0; i < len; i++) {
+            int index = random.nextInt(dic.length());
+            result += dic.charAt(index);
+        }
+        return result;
     }
 
     @OnClick(R.id.btn_to_login)

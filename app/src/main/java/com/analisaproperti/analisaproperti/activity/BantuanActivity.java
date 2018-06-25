@@ -5,9 +5,11 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.analisaproperti.analisaproperti.R;
@@ -26,10 +28,17 @@ public class BantuanActivity extends AppCompatActivity {
     TextView txtDeskripsi;
     @BindView(R.id.txt_answer)
     TextView txtAnswer;
+    @BindView(R.id.txt_pendahuluan)
+    TextView txtPendahuluan;
     @BindView(R.id.btn_next)
     Button btnNext;
     @BindView(R.id.btn_back)
     Button btnBack;
+
+    @BindView(R.id.layout_bantuan)
+    ScrollView layoutBantuan;
+    @BindView(R.id.layout_pendahuluan)
+    ScrollView layoutPendahuluan;
 
     int question = 1;
 
@@ -50,11 +59,37 @@ public class BantuanActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bantuan);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("FAQ");
 
         ButterKnife.bind(this);
 
-        setTextView(question);
+        if(getIntent().hasExtra("kode")){
+            getSupportActionBar().setTitle(getString(R.string.nav_main));
+            layoutPendahuluan.setVisibility(View.VISIBLE);
+            layoutBantuan.setVisibility(View.GONE);
+            setPendahuluan();
+        }
+        else{
+            getSupportActionBar().setTitle(getString(R.string.nav_bantuan));
+            setTextView(question);
+        }
+    }
+
+    private void setPendahuluan(){
+        String pendahuluan = "<b>Pendahuluan :</b><br>\n" +
+                "Apps ini dibuat untuk mempermudah semua kalangan membeli property dimana ada beberapa tahapan :<br>\n" +
+                "1. Hitungan Cicilan ke bank<br>\n" +
+                "2. Perbandingan Harga Property<br>\n" +
+                "3. Hitungan Income setiap bulan<br><br>\n" +
+                "<b>Hitungan Cicilan ke Bank,</b><br>\n" +
+                "Kita dapat mengetaui berapa besaran Cicilan per bulan yang harus di bayarkan ke Bank dan kemampuan kita untuk cicil<br><br>\n" +
+                "<b>Perbandingan harga Property,</b><br>\n" +
+                "Kita pembeli property harus mengetahui target property yang mau dibeli oleh kita apakah harganya dibawah pasaran atau harganya sangat mahal, untuk itu kita perlu alat perbandingan untuk mempermudah cara beli<br><br>\n" +
+                "<b>Hitungan Income setiap bulan,</b><br>\n" +
+                "Hitungan ini untuk mempermudah hitungan jika kita membeli property dengan income perbulan apakah sudah bisa menutupi cicilan kebank<br><br>\n" +
+                "Semoga dengan apps ini dapat membantu seseorang lebih teliti dalam membeli property.<br><br>\n" +
+                "Sukses selalu, <br>\n" +
+                "“see you on the top”";
+        txtPendahuluan.setText(Html.fromHtml(pendahuluan));
     }
 
     private void setTextView(int question) {

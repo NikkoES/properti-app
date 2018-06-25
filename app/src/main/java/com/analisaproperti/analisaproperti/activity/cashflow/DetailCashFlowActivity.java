@@ -239,7 +239,7 @@ public class DetailCashFlowActivity extends AppCompatActivity {
             txtPengeluaran.setBackgroundResource(R.drawable.table_cell_bg);
             txtPengeluaran.setTextColor(getResources().getColor(R.color.colorAccent));
 
-            txtJumlahPengeluaran.setText(concat(currencyFormatterLong(Long.parseLong(listPengeluaran.get(i).getKeteranganPengeluaran()))));
+            txtJumlahPengeluaran.setText(concat(currencyFormatterLong(Long.parseLong(listPengeluaran.get(i).getJumlahPengeluaran()))));
             txtJumlahPengeluaran.setPadding(sizeInDp, sizeInDp, sizeInDp, sizeInDp);
             txtJumlahPengeluaran.setGravity(Gravity.CENTER);
             txtJumlahPengeluaran.setBackgroundResource(R.drawable.table_cell_bg);

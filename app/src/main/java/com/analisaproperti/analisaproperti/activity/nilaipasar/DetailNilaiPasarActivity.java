@@ -11,9 +11,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.analisaproperti.analisaproperti.R;
+import com.analisaproperti.analisaproperti.api.BaseApiService;
+import com.analisaproperti.analisaproperti.api.UtilsApi;
 import com.analisaproperti.analisaproperti.model.nilaipasar.PropertiNilaiPasar;
+import com.analisaproperti.analisaproperti.model.response.ResponsePropertiNilaiPasar;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
@@ -25,6 +29,9 @@ import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 import static android.text.TextUtils.concat;
 
@@ -55,9 +62,11 @@ public class DetailNilaiPasarActivity extends AppCompatActivity {
     @BindView(R.id.ad_bottom)
     AdView bottomAds;
 
+    BaseApiService apiService;
+
     List<PropertiNilaiPasar> listAngkaNilaiPasar = new ArrayList<>();
 
-    String hargaPasaran, perbandinganProperti, catatanKondisi, catatannSurvey;
+    String idNilaiPasar, hargaPasaran, perbandinganProperti, catatanKondisi, catatannSurvey;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,9 +77,11 @@ public class DetailNilaiPasarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail_nilai_pasar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Detail "+getResources().getString(R.string.detail_nilai_pasar));
+        getSupportActionBar().setTitle(getResources().getString(R.string.detail_nilai_pasar));
 
         ButterKnife.bind(this);
+
+        apiService = UtilsApi.getAPIService();
 
         AdRequest adRequest = new AdRequest.Builder()
                 .build();
@@ -79,73 +90,93 @@ public class DetailNilaiPasarActivity extends AppCompatActivity {
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-        listAngkaNilaiPasar = (ArrayList<PropertiNilaiPasar>)getIntent().getSerializableExtra("properti");
+//        listAngkaNilaiPasar = (ArrayList<PropertiNilaiPasar>)getIntent().getSerializableExtra("properti");
+        idNilaiPasar = getIntent().getStringExtra("id_nilai_pasar");
         hargaPasaran = getIntent().getStringExtra("harga_pasaran");
         perbandinganProperti = getIntent().getStringExtra("perbandingan_properti");
         catatanKondisi = getIntent().getStringExtra("catatan_kondisi");
         catatannSurvey = getIntent().getStringExtra("catatan_survey");
 
-        int size = 8;
-        int sizeInDp = (int) (size * getResources().getDisplayMetrics().density + 0.5f);
+        getDataProperti(idNilaiPasar);
 
         txtHargaPasaran.setText(concat(currencyFormatterLong(Long.parseLong(hargaPasaran))));
         txtPerbandinganProperti.setText(""+Double.parseDouble(perbandinganProperti)+"%");
         txtCatatanKondisi.setText(catatanKondisi);
         txtCatatanSurvey.setText(catatannSurvey);
+    }
 
-        //row table
-        for(int a=0; a<6; a++){
-            TextView txtHargaJualProperti = new TextView(this);
-            TextView txtLuasTanah = new TextView(this);
-            TextView txtLuasBangunan = new TextView(this);
-            TextView txtUsiaBangunan = new TextView(this);
-            TextView txtHargaRata = new TextView(this);
+    public void getDataProperti(String idNilaiPasar){
+        apiService.getDataNilaiPasar(idNilaiPasar).enqueue(new Callback<ResponsePropertiNilaiPasar>() {
+            @Override
+            public void onResponse(Call<ResponsePropertiNilaiPasar> call, Response<ResponsePropertiNilaiPasar> response) {
+                if (response.isSuccessful()){
+                    if (response.body().getStatus().equalsIgnoreCase("success")){
+                        listAngkaNilaiPasar = response.body().getData();
 
-            if(a < listAngkaNilaiPasar.size()){
-                txtHargaJualProperti.setText(""+concat(currencyFormatterLong(Long.parseLong(listAngkaNilaiPasar.get(a).getHargaJualProperti()))));
-                txtLuasTanah.setText(""+listAngkaNilaiPasar.get(a).getLuasTanah());
-                txtLuasBangunan.setText(""+listAngkaNilaiPasar.get(a).getLuasBangunan());
-                txtUsiaBangunan.setText(""+listAngkaNilaiPasar.get(a).getUsiaBangunan());
-                txtHargaRata.setText(""+concat(currencyFormatterLong(Long.parseLong(listAngkaNilaiPasar.get(a).getHargaRataPerMeter()))));
+                        int size = 8;
+                        int sizeInDp = (int) (size * getResources().getDisplayMetrics().density + 0.5f);
+                        //row table
+                        for(int a=0; a<6; a++){
+                            TextView txtHargaJualProperti = new TextView(getApplicationContext());
+                            TextView txtLuasTanah = new TextView(getApplicationContext());
+                            TextView txtLuasBangunan = new TextView(getApplicationContext());
+                            TextView txtUsiaBangunan = new TextView(getApplicationContext());
+                            TextView txtHargaRata = new TextView(getApplicationContext());
+
+                            if(a < listAngkaNilaiPasar.size()){
+                                txtHargaJualProperti.setText(""+concat(currencyFormatterLong(Long.parseLong(listAngkaNilaiPasar.get(a).getHargaJualProperti()))));
+                                txtLuasTanah.setText(""+listAngkaNilaiPasar.get(a).getLuasTanah());
+                                txtLuasBangunan.setText(""+listAngkaNilaiPasar.get(a).getLuasBangunan());
+                                txtUsiaBangunan.setText(""+listAngkaNilaiPasar.get(a).getUsiaBangunan());
+                                txtHargaRata.setText(""+concat(currencyFormatterLong(Long.parseLong(listAngkaNilaiPasar.get(a).getHargaRataPerMeter()))));
+                            }
+                            else{
+                                txtHargaJualProperti.setText("0");
+                                txtLuasTanah.setText("0");
+                                txtLuasBangunan.setText("0");
+                                txtUsiaBangunan.setText("0");
+                                txtHargaRata.setText("0");
+                            }
+                            txtHargaJualProperti.setPadding(sizeInDp, sizeInDp, sizeInDp, sizeInDp);
+                            txtHargaJualProperti.setGravity(Gravity.CENTER);
+                            txtHargaJualProperti.setBackgroundResource(R.drawable.table_cell_bg);
+                            txtHargaJualProperti.setTextColor(getResources().getColor(R.color.colorAccent));
+
+                            txtLuasTanah.setPadding(sizeInDp, sizeInDp, sizeInDp, sizeInDp);
+                            txtLuasTanah.setGravity(Gravity.CENTER);
+                            txtLuasTanah.setBackgroundResource(R.drawable.table_cell_bg);
+                            txtLuasTanah.setTextColor(getResources().getColor(R.color.colorAccent));
+
+                            txtLuasBangunan.setPadding(sizeInDp, sizeInDp, sizeInDp, sizeInDp);
+                            txtLuasBangunan.setGravity(Gravity.CENTER);
+                            txtLuasBangunan.setBackgroundResource(R.drawable.table_cell_bg);
+                            txtLuasBangunan.setTextColor(getResources().getColor(R.color.colorAccent));
+
+                            txtUsiaBangunan.setPadding(sizeInDp, sizeInDp, sizeInDp, sizeInDp);
+                            txtUsiaBangunan.setGravity(Gravity.CENTER);
+                            txtUsiaBangunan.setBackgroundResource(R.drawable.table_cell_bg);
+                            txtUsiaBangunan.setTextColor(getResources().getColor(R.color.colorAccent));
+
+                            txtHargaRata.setPadding(sizeInDp, sizeInDp, sizeInDp, sizeInDp);
+                            txtHargaRata.setGravity(Gravity.CENTER);
+                            txtHargaRata.setBackgroundResource(R.drawable.table_cell_bg);
+                            txtHargaRata.setTextColor(getResources().getColor(R.color.colorAccent));
+
+                            ((TableRow) rowHargaJualProperti).addView(txtHargaJualProperti);
+                            ((TableRow) rowLuasTanah).addView(txtLuasTanah);
+                            ((TableRow) rowLuasBangunan).addView(txtLuasBangunan);
+                            ((TableRow) rowUsiaBangunan).addView(txtUsiaBangunan);
+                            ((TableRow) rowHargaRata).addView(txtHargaRata);
+                        }
+                    }
+                }
             }
-            else{
-                txtHargaJualProperti.setText("0");
-                txtLuasTanah.setText("0");
-                txtLuasBangunan.setText("0");
-                txtUsiaBangunan.setText("0");
-                txtHargaRata.setText("0");
+
+            @Override
+            public void onFailure(Call<ResponsePropertiNilaiPasar> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), getString(R.string.koneksi_internet_bermasalah), Toast.LENGTH_SHORT).show();
             }
-            txtHargaJualProperti.setPadding(sizeInDp, sizeInDp, sizeInDp, sizeInDp);
-            txtHargaJualProperti.setGravity(Gravity.CENTER);
-            txtHargaJualProperti.setBackgroundResource(R.drawable.table_cell_bg);
-            txtHargaJualProperti.setTextColor(getResources().getColor(R.color.colorAccent));
-
-            txtLuasTanah.setPadding(sizeInDp, sizeInDp, sizeInDp, sizeInDp);
-            txtLuasTanah.setGravity(Gravity.CENTER);
-            txtLuasTanah.setBackgroundResource(R.drawable.table_cell_bg);
-            txtLuasTanah.setTextColor(getResources().getColor(R.color.colorAccent));
-
-            txtLuasBangunan.setPadding(sizeInDp, sizeInDp, sizeInDp, sizeInDp);
-            txtLuasBangunan.setGravity(Gravity.CENTER);
-            txtLuasBangunan.setBackgroundResource(R.drawable.table_cell_bg);
-            txtLuasBangunan.setTextColor(getResources().getColor(R.color.colorAccent));
-
-            txtUsiaBangunan.setPadding(sizeInDp, sizeInDp, sizeInDp, sizeInDp);
-            txtUsiaBangunan.setGravity(Gravity.CENTER);
-            txtUsiaBangunan.setBackgroundResource(R.drawable.table_cell_bg);
-            txtUsiaBangunan.setTextColor(getResources().getColor(R.color.colorAccent));
-
-            txtHargaRata.setPadding(sizeInDp, sizeInDp, sizeInDp, sizeInDp);
-            txtHargaRata.setGravity(Gravity.CENTER);
-            txtHargaRata.setBackgroundResource(R.drawable.table_cell_bg);
-            txtHargaRata.setTextColor(getResources().getColor(R.color.colorAccent));
-
-            ((TableRow) rowHargaJualProperti).addView(txtHargaJualProperti);
-            ((TableRow) rowLuasTanah).addView(txtLuasTanah);
-            ((TableRow) rowLuasBangunan).addView(txtLuasBangunan);
-            ((TableRow) rowUsiaBangunan).addView(txtUsiaBangunan);
-            ((TableRow) rowHargaRata).addView(txtHargaRata);
-        }
+        });
     }
 
     public void setLocale(String lang){

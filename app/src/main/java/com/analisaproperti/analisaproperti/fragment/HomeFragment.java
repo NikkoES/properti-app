@@ -21,6 +21,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.analisaproperti.analisaproperti.R;
+import com.analisaproperti.analisaproperti.activity.BantuanActivity;
 import com.analisaproperti.analisaproperti.activity.cashflow.CashFlowNewActivity;
 import com.analisaproperti.analisaproperti.activity.cicilan.CicilanActivity;
 import com.analisaproperti.analisaproperti.activity.nilaipasar.NilaiPasarActivity;
@@ -35,7 +36,7 @@ import java.util.Locale;
 public class HomeFragment extends Fragment {
 
     private AdView topAds, bottomAds;
-    private CardView menuCicilan, menuNilaiPasar, menuCashFlow;
+    private CardView menuPendahuluan, menuCicilan, menuNilaiPasar, menuCashFlow;
     private EditText etKeterangan;
     private TextView txtJudul;
 
@@ -73,8 +74,18 @@ public class HomeFragment extends Fragment {
         menuCicilan = view.findViewById(R.id.menu_cicilan);
         menuNilaiPasar = view.findViewById(R.id.menu_nilai_pasar);
         menuCashFlow = view.findViewById(R.id.menu_cashflow);
+        menuPendahuluan = view.findViewById(R.id.menu_pendahuluan);
 
         showBannerAd();
+
+        menuPendahuluan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), BantuanActivity.class);
+                i.putExtra("kode", "pendahuluan");
+                startActivity(i);
+            }
+        });
 
         menuCicilan.setOnClickListener(new View.OnClickListener() {
             @Override

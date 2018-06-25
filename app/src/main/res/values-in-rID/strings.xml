@@ -18,7 +18,7 @@
     <string name="nav_give_five_star">Beri Kami 5 Bintang</string>
     <string name="nav_edit_profil">Ubah Profil</string>
     <string name="nav_keluar">Keluar</string>
-    <string name="nav_main">Daftar Menu :</string>
+    <string name="nav_main">Pendahuluan</string>
 
     <!--login register-->
     <string name="id_user">ID User</string>

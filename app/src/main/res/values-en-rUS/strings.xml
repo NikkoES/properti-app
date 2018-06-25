@@ -20,7 +20,7 @@
     <string name="nav_give_five_star">Give Us Five Stars</string>
     <string name="nav_edit_profil">Edit Profile</string>
     <string name="nav_keluar">Logout</string>
-    <string name="nav_main">Menu List :</string>
+    <string name="nav_main">Introduction</string>
 
     <!--login register-->
     <string name="login">Login</string>

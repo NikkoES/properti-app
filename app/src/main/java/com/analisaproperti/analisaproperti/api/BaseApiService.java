@@ -136,6 +136,9 @@ public interface BaseApiService {
     @DELETE("nilaipasar/data/{id_nilai_pasar}")
     Call<ResponsePost> deleteNilaiPasar(@Path("id_nilai_pasar") String idNilaiPasar);
 
+    @DELETE("/nilaipasar/properti/{id_nilai_pasar}")
+    Call<ResponsePost> deletePropertiNilaiPasar(@Path("id_nilai_pasar") String idNilaiPasar);
+
     @GET("cashflow/{id_user}")
     Call<ResponseCashFlow> getAllCashFlow(@Path("id_user") String idUser);
 
@@ -243,5 +246,20 @@ public interface BaseApiService {
 
     @DELETE("cashflow/data/{id_cash_flow}")
     Call<ResponsePost> deleteCashFlow(@Path("id_cash_flow") String idCashFlow);
+
+    @DELETE("cashflow/kamar/{id_cash_flow}")
+    Call<ResponsePost> deleteKamar(@Path("id_cash_flow") String idCashFlow);
+
+    @DELETE("cashflow/pemasukan/{id_cash_flow}")
+    Call<ResponsePost> deletePemasukan(@Path("id_cash_flow") String idCashFlow);
+
+    @DELETE("cashflow/pengeluaran/{id_cash_flow}")
+    Call<ResponsePost> deletePengeluaran(@Path("id_cash_flow") String idCashFlow);
+
+    @DELETE("cashflow/fasilitas/{id_cash_flow}")
+    Call<ResponsePost> deleteFasilitas(@Path("id_cash_flow") String idCashFlow);
+
+    @DELETE("cashflow/extras/{id_cash_flow}")
+    Call<ResponsePost> deleteExtras(@Path("id_cash_flow") String idCashFlow);
 
 }

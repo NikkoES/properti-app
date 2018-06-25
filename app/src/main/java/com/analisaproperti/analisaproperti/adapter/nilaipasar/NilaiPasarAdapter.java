@@ -131,6 +131,7 @@ public class NilaiPasarAdapter extends RecyclerView.Adapter<NilaiPasarAdapter.Vi
                                 Intent i = new Intent(context, DetailNilaiPasarActivity.class);
                                 i.putExtra("position", position);
                                 i.putExtra("properti", (ArrayList<PropertiNilaiPasar>) listProperti);
+                                i.putExtra("id_nilai_pasar", idNilaiPasar);
                                 i.putExtra("harga_pasaran", hargaPasaran);
                                 i.putExtra("perbandingan_properti", perbandinganProperti);
                                 i.putExtra("catatan_kondisi", catatanKondisi);
@@ -142,6 +143,7 @@ public class NilaiPasarAdapter extends RecyclerView.Adapter<NilaiPasarAdapter.Vi
                             case 1 : {
                                 Intent i = new Intent(context, NilaiPasarActivity.class);
                                 i.putExtra("position", position);
+                                i.putExtra("id_nilai_pasar", idNilaiPasar);
                                 i.putExtra("properti", (ArrayList<PropertiNilaiPasar>) listProperti);
                                 i.putExtra("propertiNilaiPasar", nilaiPasar.toString());
                                 context.startActivity(i);
@@ -161,6 +163,7 @@ public class NilaiPasarAdapter extends RecyclerView.Adapter<NilaiPasarAdapter.Vi
                     public void onResponse(Call<ResponsePost> call, Response<ResponsePost> response) {
                         if (response.isSuccessful()){
                             if (response.body().getData().equalsIgnoreCase("1")){
+                                deleteProperti(idNilaiPasar);
                                 Toast.makeText(context, context.getString(R.string.berhasil_dihapus), Toast.LENGTH_SHORT).show();
                                 listNilaiPasar.remove(position);
                                 notifyDataSetChanged();
@@ -179,6 +182,20 @@ public class NilaiPasarAdapter extends RecyclerView.Adapter<NilaiPasarAdapter.Vi
                     }
                 });
                 notifyDataSetChanged();
+            }
+        });
+    }
+
+    public void deleteProperti(String idNilaiPasar){
+        apiService.deletePropertiNilaiPasar(idNilaiPasar).enqueue(new Callback<ResponsePost>() {
+            @Override
+            public void onResponse(Call<ResponsePost> call, Response<ResponsePost> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponsePost> call, Throwable t) {
+
             }
         });
     }

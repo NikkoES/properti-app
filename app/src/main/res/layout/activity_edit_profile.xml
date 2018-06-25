@@ -30,21 +30,6 @@
                     android:layout_height="wrap_content">
 
                     <EditText
-                        android:id="@+id/et_id"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="text"
-                        android:focusable="false"
-                        android:maxLength="13"
-                        android:hint="@string/id_user"/>
-
-                </android.support.design.widget.TextInputLayout>
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <EditText
                         android:id="@+id/et_nama"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

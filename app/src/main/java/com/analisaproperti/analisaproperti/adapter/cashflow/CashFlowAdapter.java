@@ -158,6 +158,7 @@ public class CashFlowAdapter extends RecyclerView.Adapter<CashFlowAdapter.ViewHo
                     public void onResponse(Call<ResponsePost> call, Response<ResponsePost> response) {
                         if (response.isSuccessful()){
                             if (response.body().getData().equalsIgnoreCase("1")){
+                                deleteData(idCashFlow);
                                 Toast.makeText(context, context.getString(R.string.berhasil_dihapus), Toast.LENGTH_SHORT).show();
                                 listCashFlow.remove(position);
                                 notifyDataSetChanged();
@@ -176,6 +177,64 @@ public class CashFlowAdapter extends RecyclerView.Adapter<CashFlowAdapter.ViewHo
                     }
                 });
                 notifyDataSetChanged();
+            }
+        });
+    }
+
+    public void deleteData(String idCashFlow){
+        apiService.deleteKamar(idCashFlow).enqueue(new Callback<ResponsePost>() {
+            @Override
+            public void onResponse(Call<ResponsePost> call, Response<ResponsePost> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponsePost> call, Throwable t) {
+
+            }
+        });
+        apiService.deletePemasukan(idCashFlow).enqueue(new Callback<ResponsePost>() {
+            @Override
+            public void onResponse(Call<ResponsePost> call, Response<ResponsePost> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponsePost> call, Throwable t) {
+
+            }
+        });
+        apiService.deletePengeluaran(idCashFlow).enqueue(new Callback<ResponsePost>() {
+            @Override
+            public void onResponse(Call<ResponsePost> call, Response<ResponsePost> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponsePost> call, Throwable t) {
+
+            }
+        });
+        apiService.deleteFasilitas(idCashFlow).enqueue(new Callback<ResponsePost>() {
+            @Override
+            public void onResponse(Call<ResponsePost> call, Response<ResponsePost> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponsePost> call, Throwable t) {
+
+            }
+        });
+        apiService.deleteExtras(idCashFlow).enqueue(new Callback<ResponsePost>() {
+            @Override
+            public void onResponse(Call<ResponsePost> call, Response<ResponsePost> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponsePost> call, Throwable t) {
+
             }
         });
     }

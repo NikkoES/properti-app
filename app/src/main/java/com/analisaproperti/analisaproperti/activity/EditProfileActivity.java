@@ -35,8 +35,6 @@ import retrofit2.Response;
 
 public class EditProfileActivity extends AppCompatActivity {
 
-    @BindView(R.id.et_id)
-    EditText etId;
     @BindView(R.id.et_nama)
     EditText etNama;
     @BindView(R.id.et_no_hp)
@@ -98,7 +96,6 @@ public class EditProfileActivity extends AppCompatActivity {
             password = userProfile.get("password").toString();
             img = userProfile.get("profile_photo").toString();
 
-            etId.setText(id);
             etNama.setText(nama);
             etNoHp.setText(noHp);
             etEmail.setText(email);
