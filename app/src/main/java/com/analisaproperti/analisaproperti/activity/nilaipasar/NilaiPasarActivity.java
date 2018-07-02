@@ -715,7 +715,7 @@ public class NilaiPasarActivity extends AppCompatActivity {
 
 //            Toast.makeText(this, "count : "+count+"\n list count :"+listAngkaNilaiPasar.size(), Toast.LENGTH_SHORT).show();
 
-            Intent i = new Intent(NilaiPasarActivity.this, ReviewNilaiPasarActivity.class);
+            Intent i = new Intent(NilaiPasarActivity.this, HasilNilaiPasarActivity.class);
             i.putExtra("Count", count);
             i.putExtra("catatanKondisi", catatanKondisi);
             i.putExtra("catatanSurvey", catatanSurvey);

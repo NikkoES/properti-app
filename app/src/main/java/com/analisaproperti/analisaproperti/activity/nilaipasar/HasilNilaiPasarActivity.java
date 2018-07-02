@@ -62,6 +62,10 @@ public class HasilNilaiPasarActivity extends AppCompatActivity {
     long hargaPasaranPerMeter;
     double perbandinganPropertiIncaran;
 
+    int countProperty;
+
+    double dHargaPasaranPerMeter = 0;
+
     List<PropertiNilaiPasar> listAngkaNilaiPasar = new ArrayList<>();
 
     String catatanKondisi, catatanSurvey;
@@ -107,12 +111,19 @@ public class HasilNilaiPasarActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(getString(R.string.final_result));
 
         idNilaiPasar = getIntent().getStringExtra("idNilaiPasar");
-        hargaPasaranPerMeter = getIntent().getLongExtra("HargaPasaran", 0);
-        perbandinganPropertiIncaran = getIntent().getDoubleExtra("Perbandingan", 0);
         listAngkaNilaiPasar = (ArrayList<PropertiNilaiPasar>)getIntent().getSerializableExtra("NilaiPasar");
         catatanKondisi = getIntent().getStringExtra("catatanKondisi");
         catatanSurvey = getIntent().getStringExtra("catatanSurvey");
         keterangan = getIntent().getStringExtra("keterangan");
+        countProperty = getIntent().getIntExtra("Count", 0);
+
+        //final result
+        for(int j=1; j<=countProperty; j++){
+            PropertiNilaiPasar pasaranPerMeter = listAngkaNilaiPasar.get(j);
+            dHargaPasaranPerMeter = dHargaPasaranPerMeter + Long.parseLong(pasaranPerMeter.getHargaTanahPerMeter());
+        }
+        hargaPasaranPerMeter = (long) dHargaPasaranPerMeter / countProperty;
+        perbandinganPropertiIncaran = 100 * Long.parseLong(listAngkaNilaiPasar.get(0).getHargaTanahPerMeter()) / hargaPasaranPerMeter;
 
         DecimalFormat dFormat = new DecimalFormat("#.##");
         if(hargaPasaranPerMeter<0){
@@ -150,7 +161,7 @@ public class HasilNilaiPasarActivity extends AppCompatActivity {
         DecimalFormatSymbols formatRp = new DecimalFormatSymbols();
 
         formatRp.setCurrencySymbol("Rp. ");
-        formatRp.setMonetaryDecimalSeparator('.');
+        formatRp.setMonetaryDecimalSeparator(',');
         formatRp.setGroupingSeparator('.');
 
         kursIndo.setDecimalFormatSymbols(formatRp);

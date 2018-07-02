@@ -321,7 +321,7 @@ public class CicilanActivity extends AppCompatActivity {
         DecimalFormatSymbols formatRp = new DecimalFormatSymbols();
 
         formatRp.setCurrencySymbol("Rp. ");
-        formatRp.setMonetaryDecimalSeparator('.');
+        formatRp.setMonetaryDecimalSeparator(',');
         formatRp.setGroupingSeparator('.');
 
         kursIndo.setDecimalFormatSymbols(formatRp);
@@ -333,7 +333,7 @@ public class CicilanActivity extends AppCompatActivity {
         DecimalFormatSymbols formatRp = new DecimalFormatSymbols();
 
         formatRp.setCurrencySymbol("Rp. ");
-        formatRp.setMonetaryDecimalSeparator('.');
+        formatRp.setMonetaryDecimalSeparator(',');
         formatRp.setGroupingSeparator('.');
 
         kursIndo.setDecimalFormatSymbols(formatRp);

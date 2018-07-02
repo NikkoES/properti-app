@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             e.printStackTrace();
         }
         try {
-            Glide.with(this).load(userProfile.get("profile_photo").toString()).placeholder(R.drawable.ic_profile).into(imageProfile);
+            Glide.with(this).load(userProfile.get("profile_photo").toString()).placeholder(R.drawable.ic_launcher).into(imageProfile);
             txtNama.setText(userProfile.get("name").toString());
             txtEmail.setText(userProfile.get("email").toString());
         } catch (JSONException e) {
